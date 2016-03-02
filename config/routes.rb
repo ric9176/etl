@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/home'
+
+  get 'static_pages/why_us'
+
+  get 'static_pages/services'
+
+  get 'static_pages/pricing'
+
+  get 'static_pages/book_a_free_lesson'
+
+  get 'static_pages/contact'
+
+  get 'static_pages/blog'
+
   root 'info#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
