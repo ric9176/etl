@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Etl</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Etl</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= link_to "Home", root_path %>
+    <%= link_to "Why Us", why_us_path %>
+    <%= link_to "Services", services_path %>
+    <%= link_to "Pricing", pricing_path %>
+    <%= link_to "Book a Free Lesson", book_a_free_lesson_path %>
+    <%= link_to "Contact", contact_path %>
+    <%= link_to "Blog", blog_path %>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+  </body>
 </html>
