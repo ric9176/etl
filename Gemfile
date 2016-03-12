@@ -38,6 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
