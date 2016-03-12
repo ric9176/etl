@@ -7,15 +7,20 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= link_to "Home", root_path %>
+
+    <!-- <%= link_to "Home", root_path %>
     <%= link_to "Why Us", why_us_path %>
     <%= link_to "Services", services_path %>
     <%= link_to "Pricing", pricing_path %>
     <%= link_to "Book a Free Lesson", book_a_free_lesson_path %>
     <%= link_to "Contact", contact_path %>
-    <%= link_to "Blog", blog_path %>
+    <%= link_to "Blog", blog_path %> -->
 
-    <%= yield %>
+    <%= render 'layouts/header' %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
 
   </body>
 </html>
