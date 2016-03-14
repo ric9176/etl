@@ -13,5 +13,10 @@ feature 'static_pages' do
       click_link('WHY US')
       expect(current_path).to eq('/static_pages/why_us')
     end
+
+    scenario 'should have sign in link' do
+      visit '/static_pages/home'
+      expect(page).to have_link 'Sign in'
+    end
   end
 end
