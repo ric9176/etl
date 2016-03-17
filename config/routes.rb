@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'dashboard#index'
+  root "static_pages#home"
 
-  get "home" => "static_pages#home"
+  get "dashboard" => "dashboard#index"
 
   get "why_us" => "static_pages#why_us"
 
