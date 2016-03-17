@@ -8,7 +8,7 @@ feature 'teacher_profiles' do
       fill_in 'Password', with: 'testtest'
       fill_in 'Password confirmation', with: 'testtest'
       click_button 'Sign up'
-      expect(current_path).to eq '/'
+      expect(current_path).to eq '/dashboard'
       expect(page).to have_link 'My profile'
     end
 
