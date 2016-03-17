@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :profiles
 
   devise_for :users
 
-  root 'dashboard#index' 
+  root 'dashboard#index'
 
   get "home" => "static_pages#home"
 
