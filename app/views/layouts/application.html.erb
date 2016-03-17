@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Etl</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Etl</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
   <% if user_signed_in? %>
   Welcome, <%= current_user.email %>
@@ -17,5 +17,14 @@
 
 <%= yield %>
 
-</body>
+  </head>
+  <body>
+
+    <%= render 'layouts/header' %>
+
+
+      <%= yield %>
+
+
+  </body>
 </html>

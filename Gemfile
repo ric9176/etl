@@ -19,6 +19,8 @@ gem 'bootstrap'
 
 gem 'devise'
 
+gem 'sprockets-rails'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -40,6 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'coveralls', require: false
 end
 
 group :development, :test do
