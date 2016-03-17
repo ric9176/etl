@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'static_pages' do
   context 'first time user visits site' do
     scenario 'should show information about ETL and have navagation bar links' do
-      visit '/'
+      visit '/home'
       expect(page).to have_content 'Can You Really Improve Your English From Home?'
       expect(page).to have_link 'Why Us'
       expect(page).to have_link 'Services'
@@ -14,13 +14,13 @@ feature 'static_pages' do
     end
 
     scenario 'should allow users to link to other pages' do
-      visit '/'
+      visit '/home'
       click_link('Why Us')
       expect(current_path).to eq('/why_us')
     end
 
     scenario 'should have sign in link' do
-      visit '/static_pages/home'
+      visit '/home'
       expect(page).to have_link 'Sign in'
     end
   end
