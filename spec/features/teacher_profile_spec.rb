@@ -14,7 +14,7 @@ feature 'teacher_profiles' do
       expect(page).to have_link 'My profile'
     end
 
-    scenario 'users are directed to their specific profile page' do
+    xscenario 'users are directed to their specific profile page' do
       sign_up('test@test.com', 'testtest', 'testtest')
       click_link 'Log out'
       sign_up('test2@test.com', 'testtest', 'testtest')
