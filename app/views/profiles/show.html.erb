@@ -1,2 +1,5 @@
-<%= current_user.email %>'s profile
+<%= @user.email %>'s profile
+<% if @user.profile.name %>
+  <a href='#'>Create a profile</a>
+<% end %>
 <a href ="#">Edit profile</a>

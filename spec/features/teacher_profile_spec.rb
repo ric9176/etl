@@ -21,6 +21,20 @@ feature 'teacher_profiles' do
       click_link 'My profile'
       expect(current_path).to eq '/profiles/2'
     end
+
+    scenario 'users can edit their profile' do
+      sign_up('test@test.com', 'testtest', 'testtest')
+      click_link 'My profile'
+      expect(page).to have_link 'Create your profile'
+    end
+
+    scenario "show a user's information if they have already created a profile" do
+      @user = User.create(email: 'test@test.com', password: 'testtest', password_confirmation: 'testtest')
+      @user.profile = Profile.create(name: 'Fred Hendrikson', bio: 'I am interested in teaching creepy things')
+      sign_up('test@test.com', 'testtest', 'testtest')
+      click_link 'My profile'
+      expect(page).to have_content('Fred Hendrikson')
+    end
   end
 
   context 'not signed up/in' do
