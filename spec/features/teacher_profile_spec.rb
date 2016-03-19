@@ -39,6 +39,18 @@ feature 'teacher_profiles' do
       click_link 'My profile'
       expect(page).to have_content('Fred Hendrikson')
     end
+
+    context 'user has not yet created a profile' do
+      scenario 'allow user to create a profile' do
+        sign_up('test@test.com', 'testtest', 'testtest')
+        click_link 'My profile'
+        click_link 'Make a profile'
+        fill_in 'Name', with: 'Test Johnson'
+        fill_in 'Bio', with: 'I like long rides on the subway...'
+        click_button 'Create Profile'
+        expect(page).to have_content('Test Johnson')
+      end
+    end
   end
 
   context 'not signed up/in' do
