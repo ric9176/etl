@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
 
   def index
+    @profiles = Profile.all
+  end
+
+  def show
     @user = current_user
   end
 
@@ -16,7 +20,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.create(profile_params)
     @current_user.profile = @profile
     if @profile.save
-      redirect_to '/profiles'
+      redirect_to profile_path(:id => @current_user.id)
     else
       render 'new'
     end

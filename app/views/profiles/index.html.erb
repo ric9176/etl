@@ -1,8 +1,6 @@
-<%= @user.email %>'s profile
-<% if @user.profile != nil %>
-  <h4> Name: <%= @user.profile.name %> </h4>
-  <h4> Bio: <%= @user.profile.bio %> </h4>
+<% if @profiles.any? %>
+  <% @profiles.each do |p| %>
+    <h4> Name: <%= p.name %> </h4>
+    <h4> Bio: <%= p.bio %> </h4>
+  <% end %>
 <% end %>
-<%=link_to 'Make a profile', new_profile_path %>
-
-<a href ="#">Edit profile</a>

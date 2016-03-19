@@ -51,6 +51,14 @@ feature 'teacher_profiles' do
         expect(page).to have_content('Test Johnson')
       end
     end
+
+    scenario 'shows all teacher profiles on index page' do
+      @profile = Profile.create(name: 'Fred', bio: 'whatever')
+      @profile = Profile.create(name: 'John', bio: 'filler text')
+      visit '/profiles'
+      expect(page).to have_content('Fred')
+      expect(page).to have_content('John')
+    end
   end
 
   context 'not signed up/in' do
