@@ -1,0 +1,8 @@
+<%= @user.email %>'s profile
+<% if @user.profile != nil %>
+  <%= @user.profile.name %>
+  <%= @user.profile.bio %>
+<% end %>
+<%=link_to 'Make a profile', new_profile_path %>
+
+<a href ="#">Edit profile</a>
