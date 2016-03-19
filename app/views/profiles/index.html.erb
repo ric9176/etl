@@ -1,7 +1,7 @@
 <%= @user.email %>'s profile
 <% if @user.profile != nil %>
-  <%= @user.profile.name %>
-  <%= @user.profile.bio %>
+  <h4> Name: <%= @user.profile.name %> </h4>
+  <h4> Bio: <%= @user.profile.bio %> </h4>
 <% end %>
 <%=link_to 'Make a profile', new_profile_path %>
 
