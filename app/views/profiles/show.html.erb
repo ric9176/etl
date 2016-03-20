@@ -2,7 +2,9 @@
 <% if @user.profile != nil %>
   <h4> Name: <%= @user.profile.name %> </h4>
   <h4> Bio: <%= @user.profile.bio %> </h4>
+  <% else %>
+    <%=link_to 'Make a profile', new_profile_path %>
+
 <% end %>
-<%=link_to 'Make a profile', new_profile_path %>
 
 <a href ="#">Edit profile</a>
