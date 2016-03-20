@@ -1,7 +1,5 @@
-<%= form_for @profile do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :bio %>
-  <%= f.text_field :bio %>
-  <%= f.submit %>
-<% end %>
+<h1>My Profile</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', profile_path(:id => @user.id) %>
