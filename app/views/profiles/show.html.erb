@@ -6,4 +6,4 @@
   <%=link_to 'Make a profile', new_profile_path %>
 <% end %>
 
-<a href ="#">Edit profile</a>
+<%= link_to 'Edit Profile', edit_profile_path(:id => @user.id) %>
