@@ -13,8 +13,16 @@
     <% if user_signed_in? %>
       Welcome, <%= current_user.email %>
       <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
+
+    <% if teacher_signed_in? && !user_signed_in? %>
+      Welcome, <%= current_teacher.email %>
+      <%= link_to "Teacher log out", destroy_teacher_session_path, method: :delete %>
+    <% end %>
+
+    <% if !teacher_signed_in? && !user_signed_in? %>
+      <%= link_to "Student sign in", new_user_session_path %>
+      <%= link_to "Teacher sign in", new_teacher_session_path %>
     <% end %>
 
     <%= render 'layouts/header' %>
