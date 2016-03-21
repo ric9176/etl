@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :set_user_type, only: [:show, :new, :create]
+  before_action :set_user_type, only: [:show, :new, :create, :edit, :update]
+  before_action :set_profile, only: [:edit, :update]
 
   def index
     @profiles = Profile.all
@@ -7,7 +8,6 @@ class ProfilesController < ApplicationController
 
   def show
   end
-
 
   def new
     @profile = Profile.new
@@ -18,6 +18,14 @@ class ProfilesController < ApplicationController
     save_profile_and_redirect
   end
 
+  def update
+    if @profile.update(profile_params)
+      redirect_to profile_path(:id => @current_user.id)
+    else
+      render 'edit'
+    end
+  end
+
 private
 
   def set_user_type
@@ -26,6 +34,8 @@ private
   end
 
   def save_profile_and_redirect
+    @profile = Profile.create(profile_params)
+    @current_user.profile = @profile
     if @profile.save
       if teacher_signed_in?
         redirect_to profile_path(:id => @current_teacher.id)
@@ -37,6 +47,7 @@ private
     end
   end
 
+
   def assign_profile
     @profile = Profile.create(profile_params)
     if user_signed_in?
@@ -45,6 +56,16 @@ private
       @current_teacher.profile = @profile
     end
   end
+
+
+  def set_profile
+    if user_signed_in?
+      @profile = Profile.find_by(user_id: @current_user.id)
+    else
+      @profile = Profile.find_by(teacher_id: @current_teacher.id)
+    end
+  end
+
 
   def profile_params
     params.require(:profile).permit(:name, :bio)

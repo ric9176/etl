@@ -3,6 +3,7 @@
   <% if @current_user.profile != nil %>
     <h4> Name: <%= @current_user.profile.name %> </h4>
     <h4> Bio: <%= @current_user.profile.bio %> </h4>
+    <%= link_to 'Edit Profile', edit_profile_path(:id => @current_user.id) %>
   <% else %>
     <%=link_to 'Make a profile', new_profile_path %>
   <% end %>
@@ -11,6 +12,7 @@
   <% if @current_teacher.profile != nil %>
     <h4> Name: <%= @current_teacher.profile.name %> </h4>
     <h4> Bio: <%= @current_teacher.profile.bio %> </h4>
+    <%= link_to 'Edit Profile', edit_profile_path(:id => @current_teacher.id) %>
   <% else %>
     <%=link_to 'Make a profile', new_profile_path %>
   <% end %>
