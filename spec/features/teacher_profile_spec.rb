@@ -29,9 +29,9 @@ feature 'teacher_profiles' do
     end
 
     scenario "show a user's information if they have already created a profile" do
-      @user = User.create(email: 'test@test.com', password: 'testtest', password_confirmation: 'testtest')
+      @current_user = User.create(email: 'test@test.com', password: 'testtest', password_confirmation: 'testtest')
       @profile = Profile.create(name: 'Fred Hendrikson', bio: 'I am interested in teaching creepy things')
-      @user.profile = @profile
+      @current_user.profile = @profile
       visit '/users/sign_in'
       fill_in 'Email', with: 'test@test.com'
       fill_in 'Password', with: 'testtest'

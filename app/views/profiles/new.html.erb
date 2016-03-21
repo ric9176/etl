@@ -1,5 +1,9 @@
 <h1>My Profile</h1>
+<% if user_signed_in? %>
+  <%= link_to 'Back', profile_path(:id => @current_user.id) %>
+  <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', profile_path(:id => @user.id) %>
+<% else %>
+  <%= link_to 'Back', profile_path(:id => @current_teacher.id) %>
+  <%= render 'form' %>
+<% end %>
