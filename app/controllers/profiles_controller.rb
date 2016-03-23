@@ -20,7 +20,11 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to profile_path(:id => @current_user.id)
+      if user_signed_in?
+        redirect_to profile_path(:id => @current_user.id)
+      else
+        redirect_to profile_path(:id => @current_teacher.id)
+      end
     else
       render 'edit'
     end
