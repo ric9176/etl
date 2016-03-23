@@ -42,7 +42,7 @@ feature 'teacher_profiles' do
 
     context 'teacher has not yet created a profile' do
       # scenario 'allow teacher to create a profile' do
-      #   sign_up_teacher('test@test.com', 'testtest', 'testtest')
+      #   sign_up_teacher('teacher@test.com', 'testtest', 'testtest')
       #   click_link 'My profile'
       #   click_link 'Make a profile'
       #   fill_in 'Name', with: 'Test Johnson'
