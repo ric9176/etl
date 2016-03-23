@@ -1,6 +1,10 @@
-<% if @profiles.any? %>
-  <% @profiles.each do |p| %>
-    <h4> Name: <%= p.name %> </h4>
-    <h4> Bio: <%= p.bio %> </h4>
+<% if user_signed_in? %>
+  <% if @teachers.any? %>
+    <% @teachers.each do |p| %>
+      <% if p.profile != nil %>
+        <h4> Name: <%= p.profile.name %> </h4>
+        <h4> Bio: <%= p.profile.bio %> </h4>
+      <% end %>
+    <% end %>
   <% end %>
 <% end %>

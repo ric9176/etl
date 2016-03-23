@@ -45,6 +45,16 @@ feature 'user_profiles' do
       expect(page).to have_content('Fred Hendrikson')
     end
 
+    scenario 'user is directed to view teacher profiles after they create a profile' do
+      sign_up_user('test@test.com', 'testtest', 'testtest')
+      click_link 'My profile'
+      click_link 'Make a profile'
+      fill_in 'Name', with: 'Test Johnson'
+      fill_in 'Bio', with: 'I like long rides on the subway...'
+      click_button 'Create Profile'
+      expect(current_path).to eq('/profiles')
+    end
+
     context 'user has not yet created a profile' do
       scenario 'allow user to create a profile' do
         sign_up_user('test@test.com', 'testtest', 'testtest')
@@ -55,14 +65,6 @@ feature 'user_profiles' do
         click_button 'Create Profile'
         expect(page).to have_content('Test Johnson')
       end
-    end
-
-    scenario 'shows all user profiles on index page' do
-      @profile = Profile.create(name: 'Fred', bio: 'whatever')
-      @profile = Profile.create(name: 'John', bio: 'filler text')
-      visit '/profiles'
-      expect(page).to have_content('Fred')
-      expect(page).to have_content('John')
     end
   end
 

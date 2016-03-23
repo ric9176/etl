@@ -53,10 +53,10 @@ feature 'teacher_profiles' do
     end
 
     scenario 'shows all teacher profiles on index page' do
-      @profile = Profile.create(name: 'Fred', bio: 'whatever')
+      @current_teacher = Teacher.create(email: 'test@test.com', password: 'testtest', password_confirmation: 'testtest')
       @profile = Profile.create(name: 'John', bio: 'filler text')
+      @current_teacher.profile = @profile
       visit '/profiles'
-      expect(page).to have_content('Fred')
       expect(page).to have_content('John')
     end
   end

@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:edit, :update]
 
   def index
-    @profiles = Profile.all
+    @teachers = Teacher.all
   end
 
   def show
@@ -44,7 +44,7 @@ private
       if teacher_signed_in?
         redirect_to profile_path(:id => @current_teacher.id)
       else
-        redirect_to profile_path(:id => @current_user.id)
+        redirect_to ('/profiles')
       end
     else
       render 'new'
