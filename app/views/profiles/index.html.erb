@@ -2,7 +2,7 @@
   <% if @teachers.any? %>
     <% @teachers.each do |p| %>
       <% if p.profile != nil %>
-        <h4> Name: <%= p.profile.name %> </h4>
+        <h4> Name: <%= "#{p.profile.name}" %> </h4>
         <h4> Bio: <%= p.profile.bio %> </h4>
       <% end %>
     <% end %>
