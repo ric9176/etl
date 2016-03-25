@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :teachers
   resources :profiles
+  resources :students
 
   devise_for :users
 
