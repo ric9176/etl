@@ -1,9 +1,9 @@
 <% if user_signed_in? %>
   <% if @teachers.any? %>
-    <% @teachers.each do |p| %>
-      <% if p.profile != nil %>
-        <h4> Name: <%= link_to "#{p.profile.name}", student_path(p) student.teachers << p %> </h4>
-        <h4> Bio: <%= p.profile.bio %> </h4>
+    <% @teachers.each do |teacher| %>
+      <% if teacher.profile %>
+        <h4> Name: <%= link_to "#{teacher.profile.name}", student_path(teacher.id), method: :put %> </h4>
+        <h4> Bio: <%= teacher.profile.bio %> </h4>
       <% end %>
     <% end %>
   <% end %>

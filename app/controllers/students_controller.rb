@@ -1,5 +1,12 @@
 class StudentsController < ApplicationController
-  def addTeacher(teacher)
-    student.teachers << p
+  def update
+    @teacher = Teacher.find(params[:id])
+    current_user.teachers << @teacher
+  end
+
+  private
+
+  def student_params
+    params.permit(:id)
   end
 end
