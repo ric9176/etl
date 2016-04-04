@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
-  before_action :authenticate_user!, :expect => [:index]
+  before_action :authenticate_student!, :expect => [:index]
 
   def index
-    @user = current_user
+    @student = current_student
   end
 end
