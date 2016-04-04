@@ -17,6 +17,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'web_helper'
+require 'model_helper'
 
 require 'coveralls'
 Coveralls.wear!('rails')
