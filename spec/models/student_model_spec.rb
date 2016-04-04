@@ -22,10 +22,9 @@ describe Student, type: :model do
       expect(Student.reflect_on_association(:student_profile).options[:dependent]).to eq :destroy
     end
     xit "Removes a student's profile from database when a student is deleted" do
-      sign_up('test@test.com', 'testtest', 'testtest')
-      test_student = Student.find_by(email: 'test@test.com')
+      test_student = Student.create(id: student_id, email: 'testtest', password: "testpassword")
       test_student.student_profile = StudentProfile.create(name: "Test", native_language: "French", learning_objectives: "Learn english!")
-      Student.find(test_student.id).destroy
+      Student.find(student_id).destroy
       expect{ (StudentProfile.find(test_student.student_profile.id)) }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
