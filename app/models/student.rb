@@ -4,5 +4,5 @@ class Student < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :student_profile
+  has_one :student_profile, dependent: :destroy
 end
