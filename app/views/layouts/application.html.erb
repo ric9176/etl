@@ -2,26 +2,23 @@
 <html>
   <head>
     <title>Etl</title>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   </head>
+
   <body>
 
-    <!-- <%= link_to "Home", root_path %>
-    <%= link_to "Why Us", why_us_path %>
-    <%= link_to "Services", services_path %>
-    <%= link_to "Pricing", pricing_path %>
-    <%= link_to "Book a Free Lesson", book_a_free_lesson_path %>
-    <%= link_to "Contact", contact_path %>
-    <%= link_to "Blog", blog_path %> -->
+    <% if user_signed_in? %>
+      Welcome, <%= current_user.email %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
 
     <%= render 'layouts/header' %>
-
-    
-      <%= yield %>
+    <%= yield %>
 
 
   </body>

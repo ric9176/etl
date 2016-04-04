@@ -17,6 +17,8 @@ gem 'haml'
 
 gem 'bootstrap'
 
+gem 'devise'
+
 gem 'sprockets-rails'
 
 # Use jquery as the JavaScript library

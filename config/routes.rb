@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'static_pages#home'
+  resources :profiles
+
+  devise_for :users
+
+  root "static_pages#home"
+
+  get "dashboard" => "dashboard#index"
 
   get "why_us" => "static_pages#why_us"
 
