@@ -29,6 +29,7 @@ feature 'student_profiles' do
 
     scenario 'student views their profile' do
       expect(page).to have_content "I'm an amazing student from Spain"
+      expect(page).to have_link 'Edit Profile'
     end
 
     xscenario 'students are directed to their specific profile page' do
