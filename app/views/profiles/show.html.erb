@@ -1,7 +1,7 @@
 <%= current_student.email %>'s profile
 <% if current_student.student_profile == nil %>
   <h1>You do not have a profile yet</h1>
-  <a href ="#">Create Profile</a>
+  <%= link_to 'Create Profile', new_student_profile_path %>
 <% else %>
   <a href ="#">Edit profile</a>
 <% end %>
