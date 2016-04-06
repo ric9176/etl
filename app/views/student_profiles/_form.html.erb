@@ -1,0 +1,25 @@
+<%= form_for(@student_profile) do |f| %>
+ <% if @student_profile.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@student_profile.errors.count, "error") %> prohibited this pin from being saved:</h2>
+
+     <ul>
+     <% @student_profile.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+ <div class="form-group">
+   <%= f.label :name %>
+   <%= f.text_field :name, class: "form-control" %>
+   <%= f.label :native_language %>
+   <%= f.text_field :native_language, class: "form-control" %>
+   <%= f.label :learning_objectives %>
+   <%= f.text_field :learning_objectives, class: "form-control" %>
+ </div>
+ <div class="form-group">
+   <%= f.submit class: "btn btn-primary" %>
+ </div>
+<% end %>

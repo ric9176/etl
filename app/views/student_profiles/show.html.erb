@@ -1,0 +1,10 @@
+<%= current_student.email %>'s profile
+<% if current_student.student_profile == nil %>
+  <h1>You do not have a profile yet</h1>
+  <%= link_to 'Create Profile', new_student_profile_path %>
+<% else %>
+<%= current_student.student_profile.name %>
+<%= current_student.student_profile.native_language %>
+<%= current_student.student_profile.learning_objectives %>
+  <a href ="#">Edit profile</a>
+<% end %>

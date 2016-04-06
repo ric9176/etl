@@ -21,6 +21,8 @@ gem 'devise'
 
 gem 'sprockets-rails'
 
+gem 'factory_girl_rails', '~> 4.6'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -43,11 +45,14 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
+
 end
 
 group :development do
