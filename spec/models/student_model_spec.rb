@@ -23,10 +23,10 @@ describe Student, type: :model do
     end
     it "Removes a student's profile from database when a student is deleted" do
       test_student = create(:student)
-      profile = StudentProfile.create(name: "Test", native_language: "French", learning_objectives: "Learn english!")
-      test_student.student_profile = profile
+      @profile = StudentProfile.create(name: "Test", native_language: "French", learning_objectives: "Learn english!")
+      test_student.student_profile = @profile
       Student.find(1).destroy
-      expect{ (StudentProfile.find(profile.id)) }.to raise_error(ActiveRecord::RecordNotFound)
+      expect{ (StudentProfile.find(@profile.id)) }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 end
