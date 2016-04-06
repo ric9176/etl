@@ -43,6 +43,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 group :development, :test do

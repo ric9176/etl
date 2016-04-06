@@ -23,9 +23,9 @@ feature 'student_profiles' do
       log_out_then_sign_in
     end
 
-    xscenario 'students are directed to their specific profile page' do
+    scenario 'students are directed to their specific profile page' do
       click_link 'My profile'
-      expect(current_path).to eq '/profiles/2'
+      expect(current_path).to eq '/profiles/5'
     end
 
     scenario 'student views their profile' do
