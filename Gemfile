@@ -19,6 +19,8 @@ gem 'bootstrap'
 
 gem 'devise'
 
+gem 'pry'
+
 gem 'sprockets-rails'
 
 gem 'factory_girl_rails', '~> 4.6'
