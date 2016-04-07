@@ -14,17 +14,24 @@ RSpec.describe StudentProfilesController, type: :controller do
   end
 
   describe 'POST create' do
-    xit 'creates and saves a new profile' do
-      current_student = create(:student)
-      expect{
-        post :create, student_profile: FactoryGirl.attributes_for(:student_profile)
-      }.to change(StudentProfile,:count).by(1)
-    end
+    # it 'creates and saves a new profile' do
+    #   expect{
+    #     post :create, student_profile: FactoryGirl.attributes_for(:student_profile)
+    #   }.to change(StudentProfile,:count).by(1)
+    # end
+
+    # it 'creates and saves a new profile' do
+    #   profile = create(:student_profile)
+    #   subject.current_student.student_profile = profile
+    #   post :create, profile.id
+    #   expect(subject.current_student.student_profile).to eq(profile)
+    # end
   end
 
   describe 'GET show' do
     it 'renders the show template' do
-      get :show, id: ""
+      student_profile = create(:student_profile)
+      get :show, id: student_profile
       expect(response).to render_template("show")
     end
   end

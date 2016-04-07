@@ -11,7 +11,7 @@ class StudentProfilesController < ApplicationController
     save_profile_and_redirect
   end
 
-  private
+
 
   def profile_params
    params.require(:student_profile).permit(:name, :native_language, :learning_objectives)
