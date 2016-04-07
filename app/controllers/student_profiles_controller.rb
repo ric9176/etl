@@ -1,4 +1,5 @@
 class StudentProfilesController < ApplicationController
+
   def show
   end
 
@@ -10,7 +11,7 @@ class StudentProfilesController < ApplicationController
     save_profile_and_redirect
   end
 
-  private
+
 
   def profile_params
    params.require(:student_profile).permit(:name, :native_language, :learning_objectives)
@@ -20,7 +21,7 @@ class StudentProfilesController < ApplicationController
     @profile = StudentProfile.create(profile_params)
     current_student.student_profile = @profile
     if @profile.save
-      redirect_to student_profile_path(:id => current_student.id)
+      redirect_to student_profile_path(id: current_student.id)
     else
       render 'new'
     end

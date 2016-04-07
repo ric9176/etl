@@ -17,35 +17,31 @@ feature 'student_profiles' do
     end
 
     scenario 'A new student can fill out a new profile' do
-      click_link 'My profile'
-      click_link 'Create Profile'
-      fill_in 'Name', with: 'Test'
-      fill_in 'Native language', with: 'French'
-      fill_in 'Learning objectives', with: 'Learn english'
-      click_button 'Create Student profile'
-      expect(page).to have_content('Test')
+      make_profile
+      expect(page).to have_content('Test student')
       expect(page).to have_content('French')
       expect(page).to have_content('Learn english')
     end
   end
 
   context 'Student is already signed up' do
-    scenario 'students are directed to their specific profile page' do
+    before do
       sign_up
+    end
+
+    scenario 'students are directed to their specific profile page' do
       log_out_then_sign_in
       click_link 'My profile'
       expect(current_path).to eq '/student_profiles/6'
     end
 
     scenario 'student views their profile' do
-      student = create(:student)
-      student.student_profile = create(:student_profile)
-      visit '/students/sign_in'
-      fill_in 'Email', with: 'student@factory.com'
-      fill_in 'Password', with: 'testing123'
-      click_button 'Log in'
+      make_profile
+      log_out_then_sign_in
       click_link 'My profile'
-      expect(page).to have_content "I want to speak english at restaurants"
+      expect(page).to have_content "Test student"
+      expect(page).to have_content "French"
+      expect(page).to have_content "Learn english"
     end
   end
 
