@@ -13,3 +13,12 @@ def log_out_then_sign_in
   fill_in 'Password', with: 'testtest'
   click_button 'Log in'
 end
+
+def make_profile(name='Test student', native_language='French', learning_objectives='Learn english')
+  click_link 'My profile'
+  click_link 'Create Profile'
+  fill_in 'Name', with: name
+  fill_in 'Native language', with: native_language
+  fill_in 'Learning objectives', with: learning_objectives
+  click_button 'Create Student profile'
+end
