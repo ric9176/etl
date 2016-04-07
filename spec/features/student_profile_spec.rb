@@ -43,6 +43,18 @@ feature 'student_profiles' do
       expect(page).to have_content "French"
       expect(page).to have_content "Learn english"
     end
+
+    scenario 'students can edit their profiles' do
+      make_profile
+      click_link 'Edit profile'
+      fill_in 'Name', with: 'Larry Johnson'
+      fill_in 'Native language', with: 'French'
+      fill_in 'Learning objectives', with: 'Edit this test'
+      click_button 'Update Student profile'
+      expect(page).to have_content('Larry Johnson')
+      expect(page).to have_content('French')
+      expect(page).to have_content('Edit this test')
+    end
   end
 
   context 'not signed up/in' do
