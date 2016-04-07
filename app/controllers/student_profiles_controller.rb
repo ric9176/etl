@@ -1,4 +1,5 @@
 class StudentProfilesController < ApplicationController
+
   def show
   end
 
