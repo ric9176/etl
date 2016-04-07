@@ -20,7 +20,7 @@ class StudentProfilesController < ApplicationController
     @profile = StudentProfile.create(profile_params)
     current_student.student_profile = @profile
     if @profile.save
-      redirect_to student_profile_path(:id => current_student.id)
+      redirect_to student_profile_path(id: current_student.id)
     else
       render 'new'
     end
