@@ -50,7 +50,7 @@ feature 'student_profiles' do
       fill_in 'Name', with: 'Larry Johnson'
       fill_in 'Native language', with: 'French'
       fill_in 'Learning objectives', with: 'Edit this test'
-      click_link 'Edit Student profile'
+      click_button 'Update Student profile'
       expect(page).to have_content('Larry Johnson')
       expect(page).to have_content('French')
       expect(page).to have_content('Edit this test')
