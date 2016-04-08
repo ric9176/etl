@@ -23,7 +23,7 @@ feature 'student_profiles' do
       expect(page).to have_content('Learn english')
     end
 
-    scenario 'student must fill in name, native_language, and learning_objectives' do
+    scenario 'student must fill in name, native_language, and learning_objectives when creating a profile' do
       click_link 'My profile'
       click_link 'Create Profile'
       click_button 'Create Student profile'
@@ -63,6 +63,18 @@ feature 'student_profiles' do
       expect(page).to have_content('Larry Johnson')
       expect(page).to have_content('French')
       expect(page).to have_content('Edit this test')
+    end
+
+    scenario 'student must fill in name, native_language, and learning_objectives when creating a profile' do
+      make_profile
+      click_link 'Edit profile'
+      fill_in 'Name', with: ''
+      fill_in 'Native language', with: ''
+      fill_in 'Learning objectives', with: ''
+      click_button 'Update Student profile'
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_content("Native language can't be blank")
+      expect(page).to have_content("Learning objectives can't be blank")
     end
   end
 
