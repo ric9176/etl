@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'student_profiles' do
   context 'new student signs up' do
     before do
-      sign_up
+      student_sign_up
     end
     scenario 'a student can click link to see their profile which takes them to their profile' do
       expect(page).to have_content('Welcome, test@test.com')
@@ -37,7 +37,7 @@ feature 'student_profiles' do
 
   context 'student is already signed up' do
     before do
-      sign_up
+      student_sign_up
     end
 
     scenario 'students are directed to their specific profile page' do

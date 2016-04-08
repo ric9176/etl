@@ -1,4 +1,4 @@
-def sign_up(email='test@test.com', password='testtest', password_confirmation='testtest')
+def student_sign_up(email='test@test.com', password='testtest', password_confirmation='testtest')
   visit '/students/sign_up'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
