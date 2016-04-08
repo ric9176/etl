@@ -22,16 +22,6 @@ class StudentProfilesController < ApplicationController
   end
 
   def create
-    save_profile_and_redirect
-  end
-
-private
-
-  def profile_params
-   params.require(:student_profile).permit(:name, :native_language, :learning_objectives)
-  end
-
-  def save_profile_and_redirect
     @profile = StudentProfile.create(profile_params)
     current_student.student_profile = @profile
     if @profile.save
@@ -39,6 +29,12 @@ private
     else
       render 'new'
     end
+  end
+
+private
+
+  def profile_params
+   params.require(:student_profile).permit(:name, :native_language, :learning_objectives)
   end
 
   def set_current_student
