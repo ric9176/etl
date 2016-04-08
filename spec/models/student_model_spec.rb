@@ -14,7 +14,7 @@ describe Student, type: :model do
   end
   context "Student associations" do
     it "Student 1:1 has_one relationship to Profile in place" do
-      expect(Student.reflect_on_association(:student_profile).macro).to eq :has_one
+      should have_one(:student_profile)
     end
   end
   context "A Student's StudentProfile is deleted when the student is deleted" do
