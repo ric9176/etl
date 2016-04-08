@@ -18,8 +18,8 @@ describe StudentProfile, type: :model do
   end
 
   context "StudentProfile associations" do
-    it "Profile 1:1 belongs_to relationship to Student in place" do
-      expect(StudentProfile.reflect_on_association(:student).macro).to eq :belongs_to
+    context "Profile 1:1 belongs_to relationship to Student in place" do
+      it { should belong_to(:student) }
     end
   end
 end
