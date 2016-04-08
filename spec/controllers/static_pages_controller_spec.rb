@@ -3,51 +3,37 @@ require "rails_helper"
 RSpec.describe StaticPagesController, type: :controller do
 
   describe "GET #home" do
-   it "returns a 200 OK status" do
-     get :home
-     expect(response).to have_http_status(:ok)
-   end
+    before { get :home }
+    it { should respond_with(200) }
  end
 
   describe "GET #why_us" do
-    it "returns a 200 OK status" do
-      get :why_us
-      expect(response).to have_http_status(:ok)
-    end
+    before { get :why_us }
+    it { should respond_with(200) }
   end
 
   describe "GET #services" do
-    it "returns a 200 OK status" do
-      get :services
-      expect(response).to have_http_status(:ok)
-    end
+    before { get :services }
+    it { should respond_with(200) }
   end
 
   describe "GET #pricing" do
-    it "returns a 200 OK status" do
-      get :pricing
-      expect(response).to have_http_status(:ok)
-    end
+    before { get :pricing }
+    it { should respond_with(200) }
   end
 
   describe "GET #book_a_free_lesson" do
-    it "returns a 200 OK status" do
-      get :book_a_free_lesson
-      expect(response).to have_http_status(:ok)
-    end
+    before { get :book_a_free_lesson }
+    it { should respond_with(200) }
   end
 
   describe "GET #contact" do
-    it "returns a 200 OK status" do
-      get :contact
-      expect(response).to have_http_status(:ok)
-    end
+    before { get :contact }
+    it { should respond_with(200) }
   end
 
   describe "GET #blog" do
-    it "returns a 200 OK status" do
-      get :blog
-      expect(response).to have_http_status(:ok)
-    end
+    before { get :blog }
+    it { should respond_with(200) }
   end
 end
