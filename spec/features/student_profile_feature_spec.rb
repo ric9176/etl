@@ -5,10 +5,6 @@ feature 'student_profiles' do
     before do
       student_sign_up
     end
-    scenario 'a student can click link to see their profile which takes them to their profile' do
-      expect(page).to have_content('Welcome, student@test.com')
-      expect(page).to have_link 'My profile'
-    end
 
     scenario 'a new student is directed to create a profile' do
       click_link 'My profile'
@@ -43,7 +39,7 @@ feature 'student_profiles' do
     scenario 'students are directed to their specific profile page' do
       student_log_out_then_sign_in
       click_link 'My profile'
-      expect(current_path).to eq '/student_profiles/7'
+      expect(current_path).to eq '/student_profiles/6'
     end
 
     scenario 'student can view their profile' do
@@ -84,7 +80,7 @@ feature 'student_profiles' do
 
   context 'not signed up/in' do
     scenario 'students cannot view profile when signed out' do
-      visit '/'
+      visit '/dashboard'
       expect(page).not_to have_link 'My profile'
     end
   end
