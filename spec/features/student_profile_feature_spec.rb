@@ -6,7 +6,7 @@ feature 'student_profiles' do
       student_sign_up
     end
     scenario 'a student can click link to see their profile which takes them to their profile' do
-      expect(page).to have_content('Welcome, test@test.com')
+      expect(page).to have_content('Welcome, student@test.com')
       expect(page).to have_link 'My profile'
     end
 
@@ -41,14 +41,14 @@ feature 'student_profiles' do
     end
 
     scenario 'students are directed to their specific profile page' do
-      log_out_then_sign_in
+      student_log_out_then_sign_in
       click_link 'My profile'
       expect(current_path).to eq '/student_profiles/7'
     end
 
     scenario 'student can view their profile' do
       make_profile
-      log_out_then_sign_in
+      student_log_out_then_sign_in
       click_link 'My profile'
       expect(page).to have_content "Test student"
       expect(page).to have_content "French"

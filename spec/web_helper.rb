@@ -1,4 +1,4 @@
-def student_sign_up(email='test@test.com', password='testtest', password_confirmation='testtest')
+def student_sign_up(email='student@test.com', password='testtest', password_confirmation='testtest')
   visit '/students/sign_up'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
@@ -6,10 +6,18 @@ def student_sign_up(email='test@test.com', password='testtest', password_confirm
   click_button 'Sign up'
 end
 
-def log_out_then_sign_in
+def teacher_sign_up(email='teacher@test.com', password='testtest', password_confirmation='testtest')
+  visit '/teachers/sign_up'
+  fill_in 'Email', with: email
+  fill_in 'Password', with: password
+  fill_in 'Password confirmation', with: password_confirmation
+  click_button 'Sign up'
+end
+
+def student_log_out_then_sign_in
   click_link 'Log out'
   click_link 'Sign in'
-  fill_in 'Email', with: 'test@test.com'
+  fill_in 'Email', with: 'student@test.com'
   fill_in 'Password', with: 'testtest'
   click_button 'Log in'
 end
