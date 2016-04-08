@@ -7,10 +7,10 @@ describe Student, type: :model do
   end
   context "Student class properties defined" do
     subject(:student) { Student.new }
-    it { is_expected.to respond_to(:email) }
-    it { is_expected.to respond_to(:encrypted_password) }
-    it { is_expected.to respond_to(:created_at) }
-    it { is_expected.to respond_to(:updated_at) }
+    it { should have_db_column(:email) }
+    it { should have_db_column(:encrypted_password) }
+    it { should have_db_column(:created_at) }
+    it { should have_db_column(:updated_at) }
   end
   context "Student associations" do
     it "Student 1:1 has_one relationship to Profile in place" do

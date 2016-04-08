@@ -7,11 +7,10 @@ RSpec.describe StudentProfilesController, type: :controller do
       get :new
       expect(assigns(:student_profile)).to be_a_new(StudentProfile)
     end
-    xit "renders the new template" do
-      get :new
-      expect(response).to render_template("new")
-    end
+      before { get :new }
+      xit { should render_template('new') }
   end
+
 
   describe 'POST create' do
     # it 'creates and saves a new profile' do
