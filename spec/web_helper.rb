@@ -1,5 +1,7 @@
 def student_sign_up(email='student@test.com', password='testtest', password_confirmation='testtest')
-  visit '/students/sign_up'
+  visit '/'
+  click_link 'Student sign in'
+  click_link 'Sign up'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
   fill_in 'Password confirmation', with: password_confirmation
@@ -7,7 +9,9 @@ def student_sign_up(email='student@test.com', password='testtest', password_conf
 end
 
 def teacher_sign_up(email='teacher@test.com', password='testtest', password_confirmation='testtest')
-  visit '/teachers/sign_up'
+  visit '/'
+  click_link 'Teacher sign in'
+  click_link 'Sign up'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
   fill_in 'Password confirmation', with: password_confirmation
@@ -16,7 +20,7 @@ end
 
 def student_log_out_then_sign_in
   click_link 'Log out'
-  click_link 'Sign in'
+  click_link 'Student sign in'
   fill_in 'Email', with: 'student@test.com'
   fill_in 'Password', with: 'testtest'
   click_button 'Log in'

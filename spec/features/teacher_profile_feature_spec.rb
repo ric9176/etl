@@ -7,9 +7,7 @@ feature 'teacher_profiles' do
     end
 
     scenario 'a new teacher is directed to create a profile' do
-      click_link 'My profile'
-      expect(page).to have_content 'You do not have a profile yet'
-      expect(page).to have_link 'Create Profile'
+      expect(page).to have_link 'My Profile'
     end
   end
 end

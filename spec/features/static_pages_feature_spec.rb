@@ -21,7 +21,7 @@ feature 'static_pages' do
 
     scenario 'should have sign in link' do
       visit '/'
-      expect(page).to have_link 'Sign in'
+      expect(page).to have_link 'Student sign in'
     end
   end
 end
