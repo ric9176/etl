@@ -1,5 +1,7 @@
 class StudentProfilesController < ApplicationController
   before_action :set_current_student, only: [:show, :new, :create, :edit, :update]
+  before_action :authenticate_student!
+
 
   def show
   end
@@ -40,4 +42,5 @@ private
   def set_current_student
     @student = current_student
   end
+
 end
