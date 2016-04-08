@@ -10,21 +10,30 @@ feature 'student_profiles' do
       expect(page).to have_link 'My profile'
     end
 
-    scenario 'A new student is directed to create a profile' do
+    scenario 'a new student is directed to create a profile' do
       click_link 'My profile'
       expect(page).to have_content 'You do not have a profile yet'
       expect(page).to have_link 'Create Profile'
     end
 
-    scenario 'A new student can fill out a new profile' do
+    scenario 'a new student can fill out a new profile' do
       make_profile
       expect(page).to have_content('Test student')
       expect(page).to have_content('French')
       expect(page).to have_content('Learn english')
     end
+
+    scenario 'student must fill in name, native_language, and learning_objectives' do
+      click_link 'My profile'
+      click_link 'Create Profile'
+      click_button 'Create Student profile'
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_content("Native language can't be blank")
+      expect(page).to have_content("Learning objectives can't be blank")
+    end
   end
 
-  context 'Student is already signed up' do
+  context 'student is already signed up' do
     before do
       sign_up
     end
@@ -32,7 +41,7 @@ feature 'student_profiles' do
     scenario 'students are directed to their specific profile page' do
       log_out_then_sign_in
       click_link 'My profile'
-      expect(current_path).to eq '/student_profiles/6'
+      expect(current_path).to eq '/student_profiles/7'
     end
 
     scenario 'student views their profile' do

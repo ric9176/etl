@@ -15,8 +15,8 @@ class StudentProfilesController < ApplicationController
   end
 
   def update
-    @profile = StudentProfile.find(params[:id])
-    if @profile.update(profile_params)
+    @student_profile = StudentProfile.find(params[:id])
+    if @student_profile.update(profile_params)
       redirect_to student_profile_path(id: current_student.id)
     else
       render 'edit'
@@ -24,9 +24,9 @@ class StudentProfilesController < ApplicationController
   end
 
   def create
-    @profile = StudentProfile.create(profile_params)
-    if @profile.save
-      current_student.student_profile = @profile
+    @student_profile = StudentProfile.create(profile_params)
+    if @student_profile.save
+      current_student.student_profile = @student_profile
       redirect_to student_profile_path(id: current_student.id)
     else
       render 'new'
