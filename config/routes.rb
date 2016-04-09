@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   devise_for :students
   resources :student_profiles
 
-
   root "static_pages#home"
 
   get "dashboard" => "dashboard#index"
