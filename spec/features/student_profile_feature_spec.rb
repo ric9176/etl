@@ -13,7 +13,7 @@ feature 'student_profiles' do
     end
 
     scenario 'a new student can fill out a new profile' do
-      make_profile
+      make_student_profile
       expect(page).to have_content('Test student')
       expect(page).to have_content('French')
       expect(page).to have_content('Learn english')
@@ -43,7 +43,7 @@ feature 'student_profiles' do
     end
 
     scenario 'student can view their profile' do
-      make_profile
+      make_student_profile
       student_log_out_then_sign_in
       click_link 'My profile'
       expect(page).to have_content "Test student"
@@ -52,7 +52,7 @@ feature 'student_profiles' do
     end
 
     scenario 'students can edit their profiles' do
-      make_profile
+      make_student_profile
       click_link 'Edit profile'
       fill_in 'Name', with: 'Larry Johnson'
       fill_in 'Native language', with: 'French'
@@ -65,7 +65,7 @@ feature 'student_profiles' do
 
     context 'student tries to edit profile without necessary fields' do
       scenario 'student must fill in name, native_language, and learning_objectives when creating a profile' do
-        make_profile
+        make_student_profile
         click_link 'Edit profile'
         fill_in 'Name', with: ''
         fill_in 'Native language', with: ''
