@@ -42,7 +42,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.4.2'
   gem 'capybara'
   gem 'coveralls', require: false
   gem 'database_cleaner'

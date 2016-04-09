@@ -1,2 +1,7 @@
-<%= @student.email %>'s dashboard
-<%= link_to "My profile", student_profile_path(:id => @student.id) %>
+<% if current_student %>
+  <%= @student.email %>'s dashboard
+  <%= link_to "My profile", student_profile_path(:id => @student.id) %>
+<% elsif current_teacher %>
+  <%= @teacher.email %>'s dashboard
+  <a href="#">My Profile</a>
+<% end %>
