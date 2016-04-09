@@ -2,27 +2,31 @@
 <html>
   <head>
     <title>Etl</title>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
 
     <% if student_signed_in? %>
-      Welcome, <%= current_student.email %>
-      <%= link_to "Log out", destroy_student_session_path, method: :delete %>
+    Welcome, <%= current_student.email %>
+    <%= link_to "Log out", destroy_student_session_path, method: :delete %>
     <% elsif teacher_signed_in? %>
-      <%= link_to "Log out", destroy_teacher_session_path, method: :delete %>
-    <% else %>
+    <%= link_to "Log out", destroy_teacher_session_path, method: :delete %>
+  <% else %>
     <%= link_to "Student sign in", new_student_session_path %>
     <%= link_to "Teacher sign in", new_teacher_session_path %>
     <% end %>
 
     <%= render 'layouts/header' %>
-    <%= yield %>
 
+    <div class="container">
+      <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+      <% end %>
+      <%= yield %>
 
-  </body>
-</html>
+    </body>
+  </html>
