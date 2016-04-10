@@ -17,6 +17,19 @@ class TeacherProfilesController < ApplicationController
     end
   end
 
+  def edit
+    @teacher_profile = TeacherProfile.find(params[:id])
+  end
+
+  def update
+    @teacher_profile = TeacherProfile.find(params[:id])
+    if @teacher_profile.update(profile_params)
+      redirect_to teacher_profile_path(id: current_teacher.id)
+    else
+      render 'edit'
+    end
+  end
+
   private
 
   def profile_params
