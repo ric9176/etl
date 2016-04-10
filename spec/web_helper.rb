@@ -26,6 +26,14 @@ def student_log_out_then_sign_in
   click_button 'Log in'
 end
 
+def teacher_log_out_then_sign_in
+  click_link 'Log out'
+  click_link 'Teacher sign in'
+  fill_in 'Email', with: 'teacher@test.com'
+  fill_in 'Password', with: 'testtest'
+  click_button 'Log in'
+end
+
 def make_student_profile(name='Test student', native_language='French', learning_objectives='Learn english')
   click_link 'My profile'
   click_link 'Create Profile'

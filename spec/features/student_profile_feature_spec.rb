@@ -64,7 +64,7 @@ feature 'student_profiles' do
     end
 
     context 'student tries to edit profile without necessary fields' do
-      scenario 'student must fill in name, native_language, and learning_objectives when creating a profile' do
+      scenario 'student must fill in name, native_language, and learning_objectives when editing a profile' do
         make_student_profile
         click_link 'Edit profile'
         fill_in 'Name', with: ''
