@@ -19,7 +19,7 @@ feature 'student_profiles' do
       expect(page).to have_content('Learn english')
     end
 
-    context 'student tries to edit profile without necessary fields' do
+    context 'student tries to create profile without necessary fields' do
       scenario 'student must fill in name, native_language, and learning_objectives when creating a profile' do
         click_link 'My profile'
         click_link 'Create Profile'
