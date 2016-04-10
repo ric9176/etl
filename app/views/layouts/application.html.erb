@@ -11,22 +11,27 @@
   <body>
 
     <% if student_signed_in? %>
-    Welcome, <%= current_student.email %>
-    <%= link_to "Log out", destroy_student_session_path, method: :delete %>
+      Welcome, <%= current_student.email %>
+      <%= link_to "Log out", destroy_student_session_path, method: :delete %>
     <% elsif teacher_signed_in? %>
-    <%= link_to "Log out", destroy_teacher_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Student sign in", new_student_session_path %>
-    <%= link_to "Teacher sign in", new_teacher_session_path %>
+      <%= link_to "Log out", destroy_teacher_session_path, method: :delete %>
+    <% else %>
+      <%= link_to "Student sign in", new_student_session_path %>
+      <%= link_to "Teacher sign in", new_teacher_session_path %>
     <% end %>
 
     <%= render 'layouts/header' %>
 
-    <div class="container">
-      <% flash.each do |name, msg| %>
-      <%= content_tag(:div, msg, class: "alert alert-info") %>
-      <% end %>
-      <%= yield %>
 
-    </body>
-  </html>
+    <div class="container">
+        <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-info") %>
+        <% end %>
+    <end>
+
+    <%= yield %>
+
+
+  </body>
+  
+</html>

@@ -1,4 +1,9 @@
 class TeacherProfilesController < ApplicationController
+
+  def index
+    @teacher_profiles = TeacherProfile.all
+  end
+
   def show
       @teacher = current_teacher
   end
