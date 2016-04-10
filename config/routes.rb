@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :teachers
   devise_for :students
   resources :student_profiles
+  resources :teacher_profiles
 
   root "static_pages#home"
 
