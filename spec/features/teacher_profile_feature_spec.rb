@@ -72,4 +72,14 @@ feature 'teacher_profiles' do
       end
     end
   end
+  
+  context 'Teacher profiles can be seen by prospective students and public' do
+    scenario 'Prospective student visits site to see teachers' do
+      teacher_sign_up
+      make_teacher_profile
+      click_link 'Log out'
+      visit '/teacher_profiles'
+      expect(page).to have_content("I am a great teacher")
+    end
+  end
 end

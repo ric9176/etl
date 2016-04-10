@@ -1,6 +1,12 @@
 class TeacherProfilesController < ApplicationController
+  before_action :authenticate_teacher!, except: [:index]
+
+  def index
+    @teacher_profiles = TeacherProfile.all
+  end
+
   def show
-      @teacher = current_teacher
+    @teacher = current_teacher
   end
 
   def new
