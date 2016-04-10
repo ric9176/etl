@@ -12,4 +12,9 @@ describe Teacher, type: :model do
     it { should have_db_column(:created_at) }
     it { should have_db_column(:updated_at) }
   end
+  context "A Teacher's TeacherProfile is deleted when the teacher is deleted" do
+    it "Teacher model has dependent destroy option" do
+      expect(Teacher.reflect_on_association(:teacher_profile).options[:dependent]).to eq :destroy
+    end
+  end
 end

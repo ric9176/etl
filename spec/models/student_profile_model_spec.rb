@@ -6,7 +6,7 @@ describe StudentProfile, type: :model do
     expect(StudentProfile < ActiveRecord::Base).to eq(true)
   end
   context 'StudentProfile class properties defined' do
-    subject(:user) { StudentProfile.new }
+    subject(:student) { StudentProfile.new }
     it { is_expected.to respond_to(:name) }
     it { is_expected.to respond_to(:native_language) }
     it { is_expected.to respond_to(:learning_objectives) }
@@ -18,7 +18,7 @@ describe StudentProfile, type: :model do
   end
 
   context "StudentProfile associations" do
-    context "Profile 1:1 belongs_to relationship to Student in place" do
+    context "StudentProfile 1:1 belongs_to relationship to Student in place" do
       it { should belong_to(:student) }
     end
   end

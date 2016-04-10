@@ -1,18 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe StudentProfilesController, type: :controller do
+describe StudentProfilesController do
   describe 'GET new' do
     xit 'assigns @student_profile' do
-      student_profile = StudentProfile.new
-      get :new
-      expect(assigns(:student_profile)).to be_a_new(StudentProfile)
+      get '/student_profiles/new'
+      binding.pry
     end
-      before { get :new }
-      xit { should render_template('new') }
   end
-
-
-  describe 'POST create' do
+  describe 'update' do
+    xit 'updates student profile' do
+      profile = create(:student_profile)
+      put "/student_profiles/#{profile.id}", {name: 'new name', native_language: 'Spanish'}
+      profile = StudentProfile.find(1)
+      expect(profile.name).to eq('new name')
+      expect(profile.native_language).to eq('Spanish')
+    end
+  end
     # it 'creates and saves a new profile' do
     #   expect{
     #     post :create, student_profile: FactoryGirl.attributes_for(:student_profile)
@@ -25,7 +28,6 @@ RSpec.describe StudentProfilesController, type: :controller do
     #   post :create, profile.id
     #   expect(subject.current_student.student_profile).to eq(profile)
     # end
-  end
 
   describe 'GET show' do
     xit 'renders the show template' do

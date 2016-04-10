@@ -3,5 +3,5 @@
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
 <% elsif current_teacher %>
   <%= @teacher.email %>'s dashboard
-  <a href="#">My Profile</a>
+  <%= link_to "My profile", teacher_profile_path(:id => @teacher.id) %>
 <% end %>
