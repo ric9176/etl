@@ -19,6 +19,15 @@ feature 'student_profiles' do
       expect(page).to have_content('Learn english')
     end
 
+    scenario 'a student can request a teacher' do
+      teacher = Teacher.create(email: 'test@test.com', password: 'test12345')
+      teacher.teacher_profile = TeacherProfile.create(name: 'Test teacher', bio: 'I rock out')
+      make_student_profile
+      click_link 'Find a teacher'
+      click_link 'Test teacher'
+      expect(page).to have_content('Test teacher has not confirmed your request yet')
+    end
+
     context 'student tries to create profile without necessary fields' do
       scenario 'student must fill in name, native_language, and learning_objectives when creating a profile' do
         click_link 'My profile'
@@ -39,7 +48,7 @@ feature 'student_profiles' do
     scenario 'students are directed to their specific profile page' do
       student_log_out_then_sign_in
       click_link 'My profile'
-      expect(current_path).to eq '/student_profiles/6'
+      expect(current_path).to eq '/student_profiles/7'
     end
 
     scenario 'student can view their profile' do
