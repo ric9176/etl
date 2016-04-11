@@ -2,7 +2,7 @@ class TeacherProfilesController < ApplicationController
   before_action :authenticate_teacher!, except: [:index]
 
   def index
-    @teacher_profiles = TeacherProfile.all
+    @teacher = Teacher.all
   end
 
   def show
