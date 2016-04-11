@@ -5,4 +5,5 @@ class Teacher < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :teacher_profile, dependent: :destroy
+  has_and_belongs_to_many :students 
 end

@@ -16,6 +16,9 @@ describe Student, type: :model do
     it "Student 1:1 has_one relationship to Profile in place" do
       should have_one(:student_profile)
     end
+    it 'Should have and belong to many teachers' do
+      should have_and_belong_to_many(:teachers)
+    end
   end
   context "A Student's StudentProfile is deleted when the student is deleted" do
     it "Student model has dependent destroy option" do

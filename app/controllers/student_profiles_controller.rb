@@ -1,9 +1,9 @@
 class StudentProfilesController < ApplicationController
-  before_action :set_current_student, only: [:show, :new, :create, :edit, :update]
   before_action :authenticate_student!
 
 
   def show
+    @student = current_student
   end
 
   def new
@@ -37,10 +37,6 @@ private
 
   def profile_params
    params.require(:student_profile).permit(:name, :native_language, :learning_objectives)
-  end
-
-  def set_current_student
-    @student = current_student
   end
 
 end
