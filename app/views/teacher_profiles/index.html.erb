@@ -13,14 +13,15 @@
   </thead>
   <tbody>
     <% @teacher.each do |teacher| %>
-    <tr>
-      <td><%= teacher.teacher_profile.name %></td>
-      <td><%= teacher.teacher_profile.bio %></td>
-      <% if teacher == current_teacher %>
-      <%= link_to "#{teacher.teacher_profile.name}", request_path(teacher.id), method: :put %>
-      <td><%= link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile) %></td>
+      <% if teacher.teacher_profile != nil %>
+        <tr>
+          <td><%= link_to "#{teacher.teacher_profile.name}", request_path(teacher.id), method: :put %></td>
+          <td><%= teacher.teacher_profile.bio %></td>
+          <% if teacher == current_teacher %>
+          <td><%= link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile) %></td>
+          <% end %>
+        </tr>
       <% end %>
-    </tr>
     <% end %>
   </tbody>
 </table>
