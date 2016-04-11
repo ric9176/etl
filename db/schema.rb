@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160411103649) do
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
   create_table "students_teachers", force: :cascade do |t|
-    t.boolean "request_status"
+    t.boolean "request_status", default: false
     t.integer "teacher_id"
     t.integer "student_id"
   end
