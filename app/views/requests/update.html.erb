@@ -1,3 +1,8 @@
 <%current_student.teachers.each do |teacher|%>
   <%= teacher.teacher_profile.name %> has not confirmed your request yet
 <% end %>
+
+<% current_student.tutorings.each do |t| %>
+  request status:
+  <%= t.request_status.to_s %>
+<% end %>

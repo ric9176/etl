@@ -12,13 +12,13 @@
     </tr>
   </thead>
   <tbody>
-    <% @teacher.each do |teacher| %>
+    <% @teachers.each do |teacher| %>
       <% if teacher.teacher_profile != nil %>
         <tr>
           <% if current_student %>
             <td><%= link_to "#{teacher.teacher_profile.name}", request_path(teacher.id), method: :put %></td>
           <% else %>
-            teacher.teacher_profile.name
+            <td><%= teacher.teacher_profile.name %></td>
           <% end %>
           <td><%= teacher.teacher_profile.bio %></td>
           <% if teacher == current_teacher %>

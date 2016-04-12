@@ -4,4 +4,13 @@
 <% elsif current_teacher %>
   <%= @teacher.email %>'s dashboard
   <%= link_to "My profile", teacher_profile_path(:id => @teacher.id) %>
+  <% @teacher.tutorings.each do |tutoring| %>
+    Pending requests:
+    <% if tutoring.request_status == false %>
+      <%= link_to "#{Student.find(tutoring.student_id).student_profile.name}", student_profile_path(tutoring.student_id) %>
+    <% else %>
+      Current students:
+      <%= Student.find(tutoring.student_id).student_profile.name %>
+    <% end %>
+  <% end %>
 <% end %>
