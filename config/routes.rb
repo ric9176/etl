@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :student_profiles
   resources :teacher_profiles
   resources :requests
+  resources :confirmations
 
   root "static_pages#home"
 

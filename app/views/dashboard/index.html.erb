@@ -5,9 +5,17 @@
   <%= @teacher.email %>'s dashboard
   <%= link_to "My profile", teacher_profile_path(:id => @teacher.id) %>
   <% @teacher.tutorings.each do |tutoring| %>
+    <br>
+    <br>
     Pending requests:
     <% if tutoring.request_status == false %>
-      <%= link_to "#{Student.find(tutoring.student_id).student_profile.name}", student_profile_path(tutoring.student_id) %>
+      <br>
+      <%= Student.find(tutoring.student_id).student_profile.name  %>
+      <br>
+      Native language: <%= Student.find(tutoring.student_id).student_profile.native_language %>
+      <br>
+      Learning objectives: <%= Student.find(tutoring.student_id).student_profile.learning_objectives %>
+      <%= link_to "Confirm", confirmation_path(tutoring.id), method: :put %>
     <% else %>
       Current students:
       <%= Student.find(tutoring.student_id).student_profile.name %>
