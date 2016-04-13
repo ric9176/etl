@@ -7,8 +7,8 @@
   <% @teacher.tutorings.each do |tutoring| %>
     <br>
     <br>
-    Pending requests:
     <% if tutoring.request_status == false %>
+      Pending requests:
       <br>
       <%= Student.find(tutoring.student_id).student_profile.name  %>
       <br>
@@ -16,6 +16,7 @@
       <br>
       Learning objectives: <%= Student.find(tutoring.student_id).student_profile.learning_objectives %>
       <%= link_to "Confirm", confirmation_path(tutoring.id), method: :put %>
+      <%= link_to "Decline", confirmation_path(tutoring.id), method: :delete %>
     <% else %>
       Current students:
       <%= Student.find(tutoring.student_id).student_profile.name %>

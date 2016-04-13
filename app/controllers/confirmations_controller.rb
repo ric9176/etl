@@ -7,5 +7,9 @@ class ConfirmationsController < ApplicationController
   end
 
   def destroy
+    @tutoring = Tutoring.find(params[:id])
+    @tutoring.destroy
+    flash[:notice] = 'Request declined successfully'
+    redirect_to '/dashboard'
   end
 end
