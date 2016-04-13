@@ -15,8 +15,8 @@
       Native language: <%= Student.find(tutoring.student_id).student_profile.native_language %>
       <br>
       Learning objectives: <%= Student.find(tutoring.student_id).student_profile.learning_objectives %>
-      <%= link_to "Confirm", confirmation_path(tutoring.id), method: :put %>
-      <%= link_to "Decline", confirmation_path(tutoring.id), method: :delete %>
+      <%= link_to "Confirm", update_number_two_request(tutoring.id), method: :put %>
+      <%= link_to "Decline", request_path(tutoring.id), method: :delete %>
     <% else %>
       Current students:
       <%= Student.find(tutoring.student_id).student_profile.name %>

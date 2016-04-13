@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   devise_for :students
   resources :student_profiles
   resources :teacher_profiles
-  resources :requests
+  resources :requests do
+    member do
+      put :update_number_two
+    end
+  end
   resources :confirmations
 
   root "static_pages#home"
