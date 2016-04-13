@@ -28,6 +28,9 @@ feature 'teacher_profiles' do
       end
     end
   end
+
+
+
   context 'teacher is already signed up' do
     before do
       teacher_sign_up
@@ -36,7 +39,7 @@ feature 'teacher_profiles' do
     scenario 'teachers are directed to their specific profile page' do
       teacher_log_out_then_sign_in
       click_link 'My profile'
-      expect(current_path).to eq '/teacher_profiles/6'
+      expect(current_path).to eq '/teacher_profiles/5'
     end
 
     scenario 'teacher can view their profile' do
@@ -69,7 +72,7 @@ feature 'teacher_profiles' do
       end
     end
   end
-
+  
   context 'Teacher profiles can be seen by prospective students and public' do
     scenario 'Prospective student visits site to see teachers' do
       teacher_sign_up
@@ -77,15 +80,6 @@ feature 'teacher_profiles' do
       click_link 'Log out'
       visit '/teacher_profiles'
       expect(page).to have_content("I am a great teacher")
-    end
-  end
-
-  context 'A teacher who is logged in can see and edit their profile' do
-    scenario 'Teacher has ability to edit their profile' do
-      teacher_sign_up
-      make_teacher_profile
-      visit '/teacher_profiles'
-      expect(page).to have_link 'Edit My Profile'
     end
   end
 end
