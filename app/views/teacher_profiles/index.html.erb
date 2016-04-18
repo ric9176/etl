@@ -12,12 +12,12 @@
     </tr>
   </thead>
   <tbody>
-    <% @teacher_profiles.each do |profile| %>
+    <% @teachers.each do |teacher| %>
     <tr>
-      <td><a href='#'><%= profile.name %></a></td>
-      <td><%= profile.bio %></td>
-      <% if profile.teacher == current_teacher %>
-      <td><%= link_to 'Edit My Profile', edit_teacher_profile_path(profile) %></td>
+      <td><a href='#'><%= teacher.teacher_profile.name %></a></td>
+      <td><%= teacher.teacher_profile.bio %></td>
+      <% if teacher == current_teacher %>
+      <td><%= link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile) %></td>
       <% end %>
     </tr>
     <% end %>
