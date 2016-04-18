@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20160418104752) do
   enable_extension "plpgsql"
 
   create_table "relationships", force: :cascade do |t|
-    t.boolean  "request_status"
+    t.boolean  "request_status", default: false
     t.integer  "student_id"
     t.integer  "teacher_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "relationships", ["student_id"], name: "index_relationships_on_student_id", using: :btree
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20160418104752) do
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
   create_table "students_teachers", force: :cascade do |t|
-    t.boolean "request_status"
+    t.boolean "request_status", default: false
     t.integer "teacher_id"
     t.integer "student_id"
   end
@@ -94,11 +94,11 @@ ActiveRecord::Schema.define(version: 20160418104752) do
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true, using: :btree
 
   create_table "tutorings", force: :cascade do |t|
-    t.boolean  "request_status"
+    t.boolean  "request_status", default: false
     t.integer  "student_id"
     t.integer  "teacher_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   add_index "tutorings", ["student_id"], name: "index_tutorings_on_student_id", using: :btree
