@@ -7,4 +7,8 @@ describe Relationship, type: :model do
     it { should have_db_column(:teacher_id) }
     it { should have_db_column(:student_id) }
   end
+  context "Relatonship associations" do
+    it { should belong_to(:teacher) }
+    it { should belong_to (:student) }
+  end
 end
