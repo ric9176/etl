@@ -16,8 +16,6 @@ describe TeacherProfile, type: :model do
   end
 
   context "TeacherProfile associations" do
-    context "TeacherProfile 1:1 belongs_to relationship to Teacher in place" do
       it { should belong_to(:teacher) }
-    end
   end
 end
