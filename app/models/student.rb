@@ -5,4 +5,6 @@ class Student < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :student_profile, dependent: :destroy
+  has_many :relationships
+  has_many :teachers, through: :relationships
 end
