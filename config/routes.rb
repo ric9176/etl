@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :students
   resources :student_profiles
   resources :teacher_profiles
-  resources :requests do
+  resources :relationships do
     member do
       put :confirm
     end

@@ -1,4 +1,4 @@
-class RequestsController < ApplicationController
+class RelationshipsController < ApplicationController
 
   before_action :set_teacher, only: :update
   before_action :set_relationship, only: [:confirm, :destroy]
