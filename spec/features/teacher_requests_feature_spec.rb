@@ -47,7 +47,7 @@ feature 'teacher requests' do
     student.student_profile = student_profile
     relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id)
     teacher_sign_in('teacher@test.com', 'test12345')
-    click_link 'confirm'
+    click_link 'Confirm'
     expect(page).to have_content('Current students:')
     expect(page).to have_content('Test student')
   end
@@ -59,7 +59,7 @@ feature 'teacher requests' do
     student.student_profile = student_profile
     relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id)
     teacher_sign_in('teacher@test.com', 'test12345')
-    click_link 'decline'
+    click_link 'Decline'
     expect(page).not_to have_content('Current students:')
     expect(page).not_to have_content('Test student')
   end
