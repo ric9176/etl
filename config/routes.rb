@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :teacher_profiles
   resources :requests do
     member do
-      put :update_number_two_request
+      put :confirm
     end
   end
 

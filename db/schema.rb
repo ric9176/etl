@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(version: 20160418104752) do
   add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
+  create_table "students_teachers", force: :cascade do |t|
+    t.boolean "request_status"
+    t.integer "teacher_id"
+    t.integer "student_id"
+  end
+
+  add_index "students_teachers", ["student_id"], name: "index_students_teachers_on_student_id", using: :btree
+  add_index "students_teachers", ["teacher_id"], name: "index_students_teachers_on_teacher_id", using: :btree
+
   create_table "teacher_profiles", force: :cascade do |t|
     t.string   "name"
     t.text     "bio"

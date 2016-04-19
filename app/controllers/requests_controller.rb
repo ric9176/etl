@@ -5,8 +5,8 @@ class RequestsController < ApplicationController
     @relationship.save
   end
 
-  def update_number_two
-    @relationship = Relationship.find(parmas[:id])
+  def confirm
+    @relationship = Relationship.find(params[:id])
     @relationship.request_status = true
     if @relationship.save
       flash[:notice] = 'Request confirmed successfully'
