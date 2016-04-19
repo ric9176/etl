@@ -2,11 +2,11 @@
   <%= @student.email %>'s dashboard
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
   <% if @student.has_a_teacher %>
-    Current teacher: <% @student.relationships.where(request_status: true).each do |relationship| %>
+    Current teacher: <% @student.current_teachers.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
     <% end %>
   <% elsif @student.has_pending_teacher_requests %>
-    Pending requests: <% @student.relationships.where(request_status: false).each do |relationship| %>
+    Pending requests: <% @student.pending_teacher_requests.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
     <% end %>
   <% end %>

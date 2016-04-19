@@ -15,4 +15,12 @@ class Student < ActiveRecord::Base
   def has_pending_teacher_requests
     self.relationships.where(request_status: false).any?
   end
+
+  def current_teachers
+    self.relationships.where(request_status: true)
+  end
+
+  def pending_teacher_requests
+    self.relationships.where(request_status: false)
+  end
 end
