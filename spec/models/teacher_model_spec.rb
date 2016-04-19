@@ -17,4 +17,11 @@ describe Teacher, type: :model do
       expect(Teacher.reflect_on_association(:teacher_profile).options[:dependent]).to eq :destroy
     end
   end
+  context "Teacher associations" do
+    it { should have_one(:teacher_profile) }
+    it "Teacher has a many:many relationship with Student through Relationship" do
+      expect(Teacher.reflect_on_association(:students).options[:through]).to eq :relationships 
+    end
+  end
+
 end

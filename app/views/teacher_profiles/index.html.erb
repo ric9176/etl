@@ -2,16 +2,10 @@
 
 <h1>Teachers</h1>
 
-<<<<<<< HEAD
-<h1>Teachers</h1>
-
-<div id="teacher_profiles">
-||||||| 6e99bb5... Merge pull request #22 from ric9176/development
 <h1>Choose a teacher!</h1>
 
 <div id="teacher_profiles">
-=======
->>>>>>> parent of 6e99bb5... Merge pull request #22 from ric9176/development
+
 <table>
   <thead>
     <tr>
@@ -21,11 +15,18 @@
     </tr>
   </thead>
   <tbody>
-    <% @teacher_profiles.each do |profile| %>
-    <tr>
-      <td><%= profile.name %></td>
-      <td><%= profile.bio %></td>
-    </tr>
+
+    <% @teachers.each do |teacher| %>
+      <% if teacher.teacher_profile %>
+      <tr>
+        <td><%= link_to "#{teacher.teacher_profile.name}", request_path(teacher.id), method: :put %></td>
+        <td><%= teacher.teacher_profile.bio %></td>
+        <% if teacher == current_teacher %>
+          <td><%= link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile) %></td>
+        <% end %>
+      </tr>
+      <% end %>
+
     <% end %>
   </tbody>
 </table>
