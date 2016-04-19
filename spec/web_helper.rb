@@ -18,6 +18,22 @@ def teacher_sign_up(email='teacher@test.com', password='testtest', password_conf
   click_button 'Sign up'
 end
 
+def teacher_sign_in(email='teacher@test.com', password='testtest')
+  visit '/'
+  click_link 'Teacher sign in'
+  fill_in 'Email', with: email
+  fill_in 'Password', with: password
+  click_button 'Log in'
+end
+
+def student_sign_in(email='student@test.com', password='testtest')
+  visit '/'
+  click_link 'Student sign in'
+  fill_in 'Email', with: email
+  fill_in 'Password', with: password
+  click_button 'Log in'
+end
+
 def student_log_out_then_sign_in
   click_link 'Log out'
   click_link 'Student sign in'

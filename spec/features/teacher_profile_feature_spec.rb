@@ -29,8 +29,6 @@ feature 'teacher_profiles' do
     end
   end
 
-
-
   context 'teacher is already signed up' do
     before do
       teacher_sign_up
