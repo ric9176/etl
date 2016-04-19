@@ -1,32 +1,44 @@
 class RequestsController < ApplicationController
+
+  before_action :set_teacher, only: :update
+  before_action :set_relationship, only: [:confirm, :destroy]
+
+  # refactors: before action for setting teacher and relationship + strong params for relationship
+
   def update
-    @teacher = Teacher.find(params[:id])
     @relationship = Relationship.new(teacher_id: @teacher.id, student_id: current_student.id)
     @relationship.save
   end
 
   def confirm
-    @relationship = Relationship.find(params[:id])
     @relationship.request_status = true
     if @relationship.save
-      flash[:notice] = 'Request confirmed successfully'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request confirmed successfully'
     else
-      flash[:notcie] = 'Request unsuccessesful, please try again later'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request unsuccessesful, please try again later'
     end
   end
 
   def destroy
-    @relationship = Relationship.find(params[:id])
     if @relationship.destroy
-      flash[:notice] = 'Request declined successfully'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request declined successfully'
     else
-      flash[:notice] = 'Request declined successfully'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request declined successfully'
     end
   end
 
+  private
+
+    def relationship_params
+      params.require(:relationship).permit(teacher_id: @teacher.id, student_id: current_student.id)
+    end
+
+    def set_teacher
+      @teacher = Teacher.find(params[:id])
+    end
+
+    def set_relationship
+      @relationship = Relationship.find(params[:id])
+    end
 
 end
