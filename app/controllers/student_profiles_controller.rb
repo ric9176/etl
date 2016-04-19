@@ -1,9 +1,10 @@
 class StudentProfilesController < ApplicationController
-  before_action :set_current_student, only: [:show, :new, :create, :edit, :update]
+  before_action :set_student_profile, only: [:edit, :update]
   before_action :authenticate_student!
 
 
   def show
+    @student = current_student
   end
 
   def new
@@ -11,11 +12,9 @@ class StudentProfilesController < ApplicationController
   end
 
   def edit
-    @student_profile = StudentProfile.find(params[:id])
   end
 
   def update
-    @student_profile = StudentProfile.find(params[:id])
     if @student_profile.update(profile_params)
       redirect_to student_profile_path(id: current_student.id)
     else
@@ -39,8 +38,8 @@ private
    params.require(:student_profile).permit(:name, :native_language, :learning_objectives)
   end
 
-  def set_current_student
-    @student = current_student
+  def set_student_profile
+    @student_profile = StudentProfile.find(params[:id])
   end
 
 end
