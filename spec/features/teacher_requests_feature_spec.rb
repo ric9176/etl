@@ -39,4 +39,28 @@ feature 'teacher requests' do
     expect(page).to have_content('Current students:')
     expect(page).to have_content('Test student')
   end
+
+  scenario 'teachers can confirm a request' do
+    teacher = Teacher.create(email: 'teacher@test.com', password: 'test12345')
+    student = Student.create(email: 'student@test.com', password: 'test12345')
+    student_profile = StudentProfile.create(name: 'Test student', native_language: 'I rock out', learning_objectives: 'Learn english')
+    student.student_profile = student_profile
+    relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id)
+    teacher_sign_in('teacher@test.com', 'test12345')
+    click_link 'confirm'
+    expect(page).to have_content('Current students:')
+    expect(page).to have_content('Test student')
+  end
+
+  scenario 'teachers can decline a request' do
+    teacher = Teacher.create(email: 'teacher@test.com', password: 'test12345')
+    student = Student.create(email: 'student@test.com', password: 'test12345')
+    student_profile = StudentProfile.create(name: 'Test student', native_language: 'I rock out', learning_objectives: 'Learn english')
+    student.student_profile = student_profile
+    relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id)
+    teacher_sign_in('teacher@test.com', 'test12345')
+    click_link 'decline'
+    expect(page).not_to have_content('Current students:')
+    expect(page).not_to have_content('Test student')
+  end
 end
