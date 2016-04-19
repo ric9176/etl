@@ -13,25 +13,25 @@ class RequestsController < ApplicationController
   def confirm
     @relationship.request_status = true
     if @relationship.save
-      flash[:notice] = 'Request confirmed successfully'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request confirmed successfully'
     else
-      flash[:notcie] = 'Request unsuccessesful, please try again later'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request unsuccessesful, please try again later'
     end
   end
 
   def destroy
     if @relationship.destroy
-      flash[:notice] = 'Request declined successfully'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request declined successfully'
     else
-      flash[:notice] = 'Request declined successfully'
-      redirect_to '/dashboard'
+      redirect_to '/dashboard', notice: 'Request declined successfully'
     end
   end
 
   private
+
+    def relationship_params
+      params.require(:relationship).permit(teacher_id: @teacher.id, student_id: current_student.id)
+    end
 
     def set_teacher
       @teacher = Teacher.find(params[:id])
