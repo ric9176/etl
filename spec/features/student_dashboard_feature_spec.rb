@@ -12,10 +12,4 @@ feature 'student_dashboards' do
       expect(page).to have_content("test@test.com's dashboard")
     end
   end
-  context 'not signed in' do
-    xscenario 'cannot see dashboard if not signed in' do
-      visit '/dashboard'
-      expect(current_path).to eq '/students/sign_in'
-    end
-  end
 end
