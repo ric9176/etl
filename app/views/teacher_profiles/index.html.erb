@@ -19,7 +19,7 @@
     <% @teachers.each do |teacher| %>
       <% if teacher.teacher_profile %>
       <tr>
-        <td><%= link_to "#{teacher.teacher_profile.name}", request_path(teacher.id), method: :put %></td>
+        <td><%= link_to "#{teacher.teacher_profile.name}", relationship_path(teacher.id), method: :put %></td>
         <td><%= teacher.teacher_profile.bio %></td>
         <% if teacher == current_teacher %>
           <td><%= link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile) %></td>
