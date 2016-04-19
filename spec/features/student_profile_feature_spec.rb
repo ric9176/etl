@@ -84,4 +84,29 @@ feature 'student_profiles' do
       expect(page).not_to have_link 'My profile'
     end
   end
+
+  context 'Find a teacher link only renders when appropriate' do
+    it 'does not show Find a teacher link if student has not created a profile' do
+      student_sign_up
+      click_link 'My profile'
+      expect(page).to_not have_link('Find a teacher')
+    end
+
+    it 'shows Find a teacher link if student does not have a teacher but does have a profile' do
+      student_sign_up
+      make_student_profile
+      expect(page).to have_link('Find a teacher')
+    end
+
+    it 'does not show Find a teacher link if student has a confirmed teacher' do
+      student = Student.create(email: 'student@test.com', password: 'testtest')
+      student_profile = StudentProfile.create(name: 'test', native_language: 'test', learning_objectives: 'test')
+      student.student_profile = student_profile
+      teacher = Teacher.create(email: 'teacher@test.com', password: 'testtest')
+      relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id, request_status: true)
+      student_sign_in
+      click_link 'My profile'
+      expect(page).to_not have_link('Find a teacher')
+    end
+  end
 end
