@@ -37,7 +37,7 @@ feature 'teacher_profiles' do
     scenario 'teachers are directed to their specific profile page' do
       teacher_log_out_then_sign_in
       click_link 'My profile'
-      expect(current_path).to eq '/teacher_profiles/6'
+      expect(current_path).to eq '/teacher_profiles/8'
     end
 
     scenario 'teacher can view their profile' do

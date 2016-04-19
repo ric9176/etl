@@ -39,7 +39,7 @@ feature 'student_profiles' do
     scenario 'students are directed to their specific profile page' do
       student_log_out_then_sign_in
       click_link 'My profile'
-      expect(current_path).to eq '/student_profiles/6'
+      expect(current_path).to eq '/student_profiles/7'
     end
 
     scenario 'student can view their profile' do
