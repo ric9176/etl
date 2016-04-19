@@ -1,12 +1,16 @@
 class RequestsController < ApplicationController
+
+  before_action :set_teacher, only: :update
+  before_action :set_relationship, only: [:confirm, :destroy]
+
+  # refactors: before action for setting teacher and relationship + strong params for relationship
+
   def update
-    @teacher = Teacher.find(params[:id])
     @relationship = Relationship.new(teacher_id: @teacher.id, student_id: current_student.id)
     @relationship.save
   end
 
   def confirm
-    @relationship = Relationship.find(params[:id])
     @relationship.request_status = true
     if @relationship.save
       flash[:notice] = 'Request confirmed successfully'
@@ -18,7 +22,6 @@ class RequestsController < ApplicationController
   end
 
   def destroy
-    @relationship = Relationship.find(params[:id])
     if @relationship.destroy
       flash[:notice] = 'Request declined successfully'
       redirect_to '/dashboard'
@@ -28,5 +31,14 @@ class RequestsController < ApplicationController
     end
   end
 
+  private
+
+    def set_teacher
+      @teacher = Teacher.find(params[:id])
+    end
+
+    def set_relationship
+      @relationship = Relationship.find(params[:id])
+    end
 
 end
