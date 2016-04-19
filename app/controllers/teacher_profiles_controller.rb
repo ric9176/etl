@@ -1,4 +1,5 @@
 class TeacherProfilesController < ApplicationController
+  before_action :set_teacher_profile, only: [:edit, :update]
   before_action :authenticate_teacher!, except: [:index]
 
   def index
@@ -24,11 +25,10 @@ class TeacherProfilesController < ApplicationController
   end
 
   def edit
-    @teacher_profile = TeacherProfile.find(params[:id])
+    
   end
 
   def update
-    @teacher_profile = TeacherProfile.find(params[:id])
     if @teacher_profile.update(profile_params)
       redirect_to teacher_profile_path(id: current_teacher.id)
     else
@@ -41,4 +41,9 @@ class TeacherProfilesController < ApplicationController
   def profile_params
    params.require(:teacher_profile).permit(:name, :bio)
   end
+
+  def set_teacher_profile
+    @teacher_profile = TeacherProfile.find(params[:id])
+  end
+
 end
