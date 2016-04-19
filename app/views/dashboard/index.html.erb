@@ -7,7 +7,10 @@
   <% @teacher.relationships.each do |relationship| %>
     <br>
     <br>
-    <% if relationship.request_status == false %>
+    <% if relationship.request_status == true %>
+      Current students:
+      <%= Student.find(relationship.student_id).student_profile.name %>
+    <% else %>
       Pending requests:
       <br>
       <%= Student.find(relationship.student_id).student_profile.name  %>
@@ -15,9 +18,7 @@
       Native language: <%= Student.find(relationship.student_id).student_profile.native_language %>
       <br>
       Learning objectives: <%= Student.find(relationship.student_id).student_profile.learning_objectives %>
-    <% else %>
-      Current students:
-      <%= Student.find(relationship.student_id).student_profile.name %>
+
     <% end %>
   <% end %>
 <% end %>
