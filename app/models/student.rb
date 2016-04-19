@@ -11,4 +11,8 @@ class Student < ActiveRecord::Base
   def has_a_teacher
     self.relationships.where(request_status: true).any?
   end
+
+  def has_pending_teacher_requests
+    self.relationships.where(request_status: false).any?
+  end
 end

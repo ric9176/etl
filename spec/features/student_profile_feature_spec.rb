@@ -103,6 +103,8 @@ feature 'student_profiles' do
       student_profile = StudentProfile.create(name: 'test', native_language: 'test', learning_objectives: 'test')
       student.student_profile = student_profile
       teacher = Teacher.create(email: 'teacher@test.com', password: 'testtest')
+      teacher_profile = TeacherProfile.create(name: 'Test Teacher', bio: 'I rock')
+      teacher.teacher_profile = teacher_profile
       relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id, request_status: true)
       student_sign_in
       click_link 'My profile'

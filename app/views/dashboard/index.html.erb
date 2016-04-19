@@ -1,6 +1,16 @@
 <% if current_student %>
   <%= @student.email %>'s dashboard
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
+  <% if @student.has_a_teacher %>
+    Current teacher: <% @student.relationships.where(request_status: true).each do |relationship| %>
+      <%= Teacher.find(relationship.teacher_id).teacher_profile.name %>
+    <% end %>
+  <% elsif @student.has_pending_teacher_requests %>
+    Pending requests: <% @student.relationships.where(request_status: false).each do |relationship| %>
+      <%= Teacher.find(relationship.teacher_id).teacher_profile.name %>
+    <% end %>
+  <% end %>
+
 <% elsif current_teacher %>
   <%= @teacher.email %>'s dashboard
   <%= link_to "My profile", teacher_profile_path(:id => @teacher.id) %>
