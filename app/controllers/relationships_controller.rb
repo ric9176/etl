@@ -2,12 +2,12 @@ class RelationshipsController < ApplicationController
 
   before_action :set_relationship, only: [:update, :destroy]
   before_action :set_teacher, only: :create
+  before_action :authenticate_clients!
 
-  # refactors: before action for setting teacher and relationship + strong params for relationship
+  # refactors: is a callback needed/possible for relationship params?
 
   def create
-    @relationship = Relationship.new(teacher_id: @teacher.id, student_id: current_student.id)
-    @relationship.save
+    @relationship = Relationship.create(teacher_id: @teacher.id, student_id: current_student.id)
     redirect_to '/dashboard'
   end
 
@@ -36,7 +36,7 @@ class RelationshipsController < ApplicationController
   end
 
   def set_relationship
-      @relationship = Relationship.find(params[:id])
+    @relationship = Relationship.find(params[:id])
   end
 
 end
