@@ -1,11 +1,11 @@
 class RelationshipsController < ApplicationController
 
   before_action :set_relationship, only: [:update, :destroy]
+  before_action :set_teacher, only: :create
 
   # refactors: before action for setting teacher and relationship + strong params for relationship
 
   def create
-    @teacher = Teacher.find(params[:teacher_id])
     @relationship = Relationship.new(teacher_id: @teacher.id, student_id: current_student.id)
     @relationship.save
     redirect_to '/dashboard'
@@ -27,6 +27,16 @@ class RelationshipsController < ApplicationController
     else
       redirect_to '/dashboard', notice: 'Request declined successfully'
     end
+  end
+
+  private
+
+  def set_teacher
+    @teacher = Teacher.find(params[:teacher_id])
+  end
+
+  def set_relationship
+      @relationship = Relationship.find(params[:id])
   end
 
 end
