@@ -19,6 +19,7 @@ feature 'teacher requests' do
     teacher.teacher_profile = teacher_profile
     student = Student.create(email: 'student@test.com', password: 'test12345')
     relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id)
+    # binding.pry
     student_sign_in('student@test.com', 'test12345')
     make_student_profile
     click_link 'Find a teacher'

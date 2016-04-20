@@ -8,13 +8,12 @@ class RelationshipsController < ApplicationController
 
 
   def create
-    @relationship = Relationship.create(teacher_id: @teacher.id, student_id: current_student.id)
+    @relationship = Relationship.new(teacher_id: @teacher.id, student_id: current_student.id)
+    @relationship.save
     redirect_to '/dashboard'
   end
 
-
   def update
-
     @relationship.request_status = true
     if @relationship.save
       redirect_to '/dashboard', notice: 'Request confirmed successfully'
