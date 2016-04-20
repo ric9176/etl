@@ -7,4 +7,5 @@ class Teacher < ActiveRecord::Base
   has_one :teacher_profile, dependent: :destroy
   has_many :relationships
   has_many :students, through: :relationships
+  has_many :class_materials
 end
