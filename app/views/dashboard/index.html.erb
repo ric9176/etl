@@ -2,7 +2,7 @@
   <%= @student.email %>'s dashboard
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
   <% if @student.has_a_teacher %>
-    Current teacher: 
+    Current teacher:
     <% @student.current_teachers.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
     <% end %>
