@@ -1,9 +1,0 @@
-<% if current_student %>
-  <% current_student.relationships.each do |relationship| %>
-    <% if relationship.request_status == false %>
-      Pending requests:
-      <%= relationship.teacher.teacher_profile.name %> has not confirmed your request yet
-      <br>
-    <% end %>
-  <% end %>
-<% end %>
