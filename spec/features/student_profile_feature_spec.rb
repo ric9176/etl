@@ -39,7 +39,7 @@ feature 'student_profiles' do
     scenario 'students are directed to their specific profile page' do
       student_log_out_then_sign_in
       click_link 'My profile'
-      expect(current_path).to eq '/student_profiles/6'
+      expect(current_path).to eq '/student_profiles/7'
     end
 
     scenario 'student can view their profile' do
@@ -103,6 +103,8 @@ feature 'student_profiles' do
       student_profile = StudentProfile.create(name: 'test', native_language: 'test', learning_objectives: 'test')
       student.student_profile = student_profile
       teacher = Teacher.create(email: 'teacher@test.com', password: 'testtest')
+      teacher_profile = TeacherProfile.create(name: 'Test Teacher', bio: 'I rock')
+      teacher.teacher_profile = teacher_profile
       relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id, request_status: true)
       student_sign_in
       click_link 'My profile'

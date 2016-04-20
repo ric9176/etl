@@ -1,6 +1,18 @@
 <% if current_student %>
   <%= @student.email %>'s dashboard
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
+  <% if @student.has_a_teacher %>
+    Current teacher:
+    <% @student.current_teachers.each do |relationship| %>
+      <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
+    <% end %>
+  <% elsif @student.has_pending_teacher_requests %>
+    Pending requests:
+    <% @student.pending_teacher_requests.each do |relationship| %>
+      <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
+    <% end %>
+  <% end %>
+
 <% elsif current_teacher %>
   <%= @teacher.email %>'s dashboard
   <%= link_to "My profile", teacher_profile_path(:id => @teacher.id) %>
@@ -9,17 +21,17 @@
     <br>
     <% if relationship.request_status == true %>
       Current students:
-      <%= Student.find(relationship.student_id).student_profile.name %>
+      <%= @students.find(relationship.student_id).student_profile.name %>
     <% else %>
       Pending requests:
       <br>
-      <%= Student.find(relationship.student_id).student_profile.name  %>
+      <%= @students.find(relationship.student_id).student_profile.name  %>
       <br>
-      Native language: <%= Student.find(relationship.student_id).student_profile.native_language %>
+      Native language: <%= @students.find(relationship.student_id).student_profile.native_language %>
       <br>
-      Learning objectives: <%= Student.find(relationship.student_id).student_profile.learning_objectives %>
-        <%= link_to "Confirm", confirm_request_path(relationship.id), method: :put %>
-        <%= link_to "Decline", request_path(relationship.id), method: :delete %>
+      Learning objectives: <%= @students.find(relationship.student_id).student_profile.learning_objectives %>
+        <%= link_to "Confirm", relationship_path(relationship.id), method: :put %>
+        <%= link_to "Decline", relationship_path(relationship.id), method: :delete %>
     <% end %>
   <% end %>
 <% end %>
