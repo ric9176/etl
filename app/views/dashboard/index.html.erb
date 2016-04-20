@@ -2,7 +2,7 @@
   <%= @student.email %>'s dashboard
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
   <% if @student.has_a_teacher %>
-    Current teacher: 
+    Current teacher:
     <% @student.current_teachers.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
     <% end %>
@@ -30,7 +30,7 @@
       Native language: <%= @students.find(relationship.student_id).student_profile.native_language %>
       <br>
       Learning objectives: <%= @students.find(relationship.student_id).student_profile.learning_objectives %>
-        <%= link_to "Confirm", confirm_relationship_path(relationship.id), method: :put %>
+        <%= link_to "Confirm", relationship_path(relationship.id), method: :put %>
         <%= link_to "Decline", relationship_path(relationship.id), method: :delete %>
     <% end %>
   <% end %>

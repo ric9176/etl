@@ -10,7 +10,7 @@ feature 'teacher requests' do
     make_student_profile
     click_link 'Find a teacher'
     click_link 'Test teacher'
-    expect(page).to have_content('Test teacher has not confirmed your request yet')
+    expect(page).to have_content('Pending requests: Test teacher')
   end
 
   scenario 'teachers can see pending requests on their dashboard' do
