@@ -11,6 +11,7 @@
     <% @student.pending_teacher_requests.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
     <% end %>
+  Classes:
   <% end %>
 
 <% elsif current_teacher %>
@@ -22,6 +23,7 @@
     <% if relationship.request_status == true %>
       Current students:
       <%= @students.find(relationship.student_id).student_profile.name %>
+      <%= link_to 'Add class', {controller: "class_materials", action: "new", student_id: relationship.student_id} %>
     <% else %>
       Pending requests:
       <br>

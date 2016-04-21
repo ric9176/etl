@@ -9,9 +9,10 @@ feature 'class_materials' do
       student.student_profile = student_profile
       relationship = Relationship.create(request_status: true, student_id: student.id, teacher_id: teacher.id)
       teacher_sign_in('teacher@test.com', 'test12345')
-      click_link 'Add class notes'
-      fill_in 'Date of class', with: 'March 10th'
-      fill_in 'Link to materials', with: 'testlink.com'
+      click_link 'Add class'
+      fill_in 'Date', with: 'March 10th'
+      fill_in 'Link', with: 'testlink.com'
+      click_button 'Create Class material'
       click_link 'Log out'
       student_sign_in(email: 'teacher@test.com', password: 'test12345')
       expect(page).to have_content('testlink.com')

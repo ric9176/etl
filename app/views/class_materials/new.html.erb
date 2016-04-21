@@ -1,0 +1,24 @@
+<h1>Add class</h1>
+
+<%= form_for(@class) do |f| %>
+  <% if @class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@class.errors.count, "error") %> prohibited this class from being saved:</h2>
+      <ul>
+      <% @class.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div class="form-group">
+   <%= f.label :date %>
+   <%= f.date_field :date, class: "form-control" %>
+   <%= f.label :link %>
+   <%= f.text_field :link, class: "form-control" %>
+ </div>
+ <div class="form-group">
+   <%= f.submit class: "btn btn-primary" %>
+ </div>
+<% end %>
