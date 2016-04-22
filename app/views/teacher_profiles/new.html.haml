@@ -1,0 +1,4 @@
+%h1 My Profile
+- if teacher_signed_in?
+  = link_to 'Back', teacher_profile_path(:id => current_teacher.id)
+  = render 'form'

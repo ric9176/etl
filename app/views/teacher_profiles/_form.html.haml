@@ -1,0 +1,16 @@
+= form_for(@teacher_profile) do |f|
+  - if @teacher_profile.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@teacher_profile.errors.count, "error")
+        prohibited this pin from being saved:
+      %ul
+        - @teacher_profile.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+    = f.label :bio
+    = f.text_field :bio, class: "form-control"
+  .form-group
+    = f.submit class: "btn btn-primary"
