@@ -6,6 +6,11 @@
     <% @student.current_teachers.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
     <% end %>
+    Materials:
+    <% @student.materials.each do |material| %>
+      <%= material.find_by(student_id: current_student.id).link %>
+      <%= material.date %>
+    <% end %>
   <% elsif @student.has_pending_teacher_requests %>
     Pending requests:
     <% @student.pending_teacher_requests.each do |relationship| %>
@@ -23,6 +28,11 @@
       Current students:
       <%= @students.find(relationship.student_id).student_profile.name %>
       <%= link_to 'Add class', {controller: "materials", action: "new", student_id: relationship.student_id} %>
+      Materials:
+      <%= @teacher.materials.each do |material| %>
+      <%= material.date %>
+      <%= material.link %>
+      <% end %>
     <% else %>
       Pending requests:
       <br>
