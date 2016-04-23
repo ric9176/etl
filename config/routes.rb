@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :student_profiles
   resources :teacher_profiles
   resources :relationships, only: [:create, :update, :destroy]
+  resources :materials
 
 
   root "static_pages#home"
