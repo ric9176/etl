@@ -1,9 +1,0 @@
-<%= @teacher.email %>'s profile
-<% if @teacher.teacher_profile == nil %>
-  <h1>You do not have a profile yet</h1>
-  <%= link_to 'Create Profile', new_teacher_profile_path %>
-<% else %>
-  <%= @teacher.teacher_profile.name %>
-  <%= @teacher.teacher_profile.bio %>
-  <%= link_to 'Edit profile', edit_teacher_profile_path(@teacher.teacher_profile.id) %>
-<% end %>
