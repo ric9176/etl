@@ -6,6 +6,11 @@
     <% @student.current_teachers.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
     <% end %>
+    Materials:
+<% @student.class_materials.each do |material| %>
+  <%= material.link %>
+  <%= material.date %>
+<% end %>
   <% elsif @student.has_pending_teacher_requests %>
     Pending requests:
     <% @student.pending_teacher_requests.each do |relationship| %>
