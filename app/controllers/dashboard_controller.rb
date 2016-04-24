@@ -1,5 +1,7 @@
 class DashboardController < ApplicationController
 
+before_action :authenticate_clients!
+
   def index
     @student = current_student
     @teacher = current_teacher

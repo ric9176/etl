@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418104752) do
+ActiveRecord::Schema.define(version: 20160424122417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "class_materials", force: :cascade do |t|
+    t.date     "date"
+    t.string   "link"
+    t.integer  "teacher_id"
+    t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "class_materials", ["student_id"], name: "index_class_materials_on_student_id", using: :btree
+  add_index "class_materials", ["teacher_id"], name: "index_class_materials_on_teacher_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
     t.boolean  "request_status", default: false
@@ -84,6 +96,8 @@ ActiveRecord::Schema.define(version: 20160418104752) do
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "class_materials", "students"
+  add_foreign_key "class_materials", "teachers"
   add_foreign_key "relationships", "students"
   add_foreign_key "relationships", "teachers"
   add_foreign_key "student_profiles", "students"
