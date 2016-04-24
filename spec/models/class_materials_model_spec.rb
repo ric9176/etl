@@ -8,4 +8,9 @@ describe ClassMaterial, type: :model do
     it { should have_db_column(:student_id) }
     it { should have_db_column(:teacher_id) }
   end
+
+  context "ClassMaterial associations" do
+    it { should belong_to(:teacher) }
+    it { should belong_to (:student) }
+  end
 end
