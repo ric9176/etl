@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :students
   resources :student_profiles
   resources :teacher_profiles
-  resources :relationships
+  resources :class_materials
+  resources :relationships, only: [:create, :update, :destroy]
 
 
   root "static_pages#home"
