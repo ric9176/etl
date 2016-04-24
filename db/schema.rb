@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20160424122417) do
   add_index "class_materials", ["student_id"], name: "index_class_materials_on_student_id", using: :btree
   add_index "class_materials", ["teacher_id"], name: "index_class_materials_on_teacher_id", using: :btree
 
+  create_table "materials", force: :cascade do |t|
+    t.string   "date"
+    t.string   "link"
+    t.integer  "student_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "materials", ["student_id"], name: "index_materials_on_student_id", using: :btree
+  add_index "materials", ["teacher_id"], name: "index_materials_on_teacher_id", using: :btree
+
   create_table "profiles", force: :cascade do |t|
     t.string   "name"
     t.string   "bio",        limit: 200
