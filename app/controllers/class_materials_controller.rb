@@ -5,5 +5,4 @@ class ClassMaterialsController < ApplicationController
     @student_id = params[:student_id]
     session[:student_id] = @student_id
   end
-
 end
