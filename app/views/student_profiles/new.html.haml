@@ -1,0 +1,4 @@
+%h1 My Profile
+- if student_signed_in?
+  = link_to 'Back', student_profile_path(:id => current_student.id)
+  = render 'form'
