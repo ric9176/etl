@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(version: 20160424122417) do
   add_index "teachers", ["email"], name: "index_teachers_on_email", unique: true, using: :btree
   add_index "teachers", ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true, using: :btree
 
-
   add_foreign_key "class_materials", "students"
   add_foreign_key "class_materials", "teachers"
   add_foreign_key "relationships", "students"
