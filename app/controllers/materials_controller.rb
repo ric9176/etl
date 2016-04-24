@@ -3,13 +3,13 @@ class MaterialsController < ApplicationController
   def new
     @class = Material.new
     @student_id = params[:student_id]
-    flash[:student_id] = @student_id
+    session[:student_id] = @student_id
   end
 
   def create
-    binding.pry
+    @student_id = session[:student_id]
     @teacher = current_teacher
-    @class = Material.create(class_params.merge(student_id: flash[:student_id], teacher_id: current_teacher.id))
+    @class = Material.create(class_params.merge(student_id: @student_id, teacher_id: current_teacher.id))
     if @class.save
       redirect_to '/dashboard'
     else

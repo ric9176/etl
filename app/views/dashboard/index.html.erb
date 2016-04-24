@@ -8,7 +8,7 @@
     <% end %>
     Materials:
     <% @student.materials.each do |material| %>
-      <%= material.find_by(student_id: current_student.id).link %>
+      <%= material.link %>
       <%= material.date %>
     <% end %>
   <% elsif @student.has_pending_teacher_requests %>
