@@ -19,8 +19,9 @@ describe Teacher, type: :model do
   end
   context "Teacher associations" do
     it { should have_one(:teacher_profile) }
+    it { should have_many(:class_materials) }
     it "Teacher has a many:many relationship with Student through Relationship" do
-      expect(Teacher.reflect_on_association(:students).options[:through]).to eq :relationships 
+      expect(Teacher.reflect_on_association(:students).options[:through]).to eq :relationships
     end
   end
 

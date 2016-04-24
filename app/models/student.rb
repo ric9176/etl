@@ -7,6 +7,7 @@ class Student < ActiveRecord::Base
   has_one :student_profile, dependent: :destroy
   has_many :relationships
   has_many :teachers, through: :relationships
+  has_many :class_materials
 
   def has_a_teacher
     self.relationships.where(request_status: true).any?
