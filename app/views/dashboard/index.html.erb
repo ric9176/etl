@@ -1,7 +1,8 @@
 <% if current_student %>
+<%= link_to "My profile", student_profile_path(:id => @student.id) %>
+  <br>
   <%= @student.email %>'s dashboard
   <br>
-  <%= link_to "My profile", student_profile_path(:id => @student.id) %>
   <% if @student.has_a_teacher %>
     Current teacher:
     <% @student.current_teachers.each do |relationship| %>
@@ -20,8 +21,9 @@
   <% end %>
 
 <% elsif current_teacher %>
-  <%= @teacher.email %>'s dashboard
   <%= link_to "My profile", teacher_profile_path(:id => @teacher.id) %>
+  <br>
+  <%= @teacher.email %>'s dashboard
   <% @teacher.relationships.each do |relationship| %>
     <br>
     <br>
@@ -32,7 +34,8 @@
     <% else %>
       Pending requests:
       <br>
-      <%= @students.find(relationship.student_id).student_profile.name  %>
+      Name:
+      <%= @students.find(relationship.student_id).student_profile.name %>
       <br>
       Native language: <%= @students.find(relationship.student_id).student_profile.native_language %>
       <br>
