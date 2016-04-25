@@ -1,12 +1,12 @@
 %p#notice= notice
 %h1 Your classes with
 %h1= @student.student_profile.name
-- @student.class_materials_with(current_teacher).each do |classy|
+- @student.class_materials_with(current_teacher).each do |material|
   Date:
-  = classy.date
+  = material.date
   %br
   Link:
-  = classy.link
+  = material.link
   %br
   %br
 = link_to 'Back to Dashboard', dashboard_path
