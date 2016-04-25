@@ -1,5 +1,9 @@
 class ClassMaterialsController < ApplicationController
 
+  def show
+    @student = Student.find(params[:id])
+  end
+
   def new
     @class = ClassMaterial.new
     session[:student_id] = params[:student_id]

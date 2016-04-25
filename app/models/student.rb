@@ -24,4 +24,8 @@ class Student < ActiveRecord::Base
   def pending_teacher_requests
     self.relationships.where(request_status: false)
   end
+
+  def class_materials_with(teacher)
+    self.class_materials.where(teacher_id: teacher.id)
+  end
 end
