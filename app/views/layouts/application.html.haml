@@ -9,7 +9,7 @@
   %body
     - if student_signed_in?
       Welcome, #{current_student.email}
-      = link_to ("Log out", [destroy_student_session_path], :method => :delete)
+      = link_to "Log out", destroy_student_session_path, method: :delete
     - elsif teacher_signed_in?
       = link_to "Log out", destroy_teacher_session_path, method: :delete
     - else
