@@ -2,14 +2,23 @@
   <%= @student.email %>'s dashboard
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
   <% if @student.has_a_teacher %>
+    <br>
+    <br>
     Current teacher:
     <% @student.current_teachers.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
+      <br>
     <% end %>
-    Materials:
+    <br>
+    <h3>Class materials:</h3>
 <% @student.class_materials.each do |material| %>
-  <%= material.link %>
+  <br>
+  Date:
   <%= material.date %>
+  <br>
+  Link:
+  <%= material.link %>
+  <br>
 <% end %>
   <% elsif @student.has_pending_teacher_requests %>
     Pending requests:
