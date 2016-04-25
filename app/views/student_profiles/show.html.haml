@@ -4,9 +4,17 @@
   %h1 You do not have a profile yet
   = link_to 'Create Profile', new_student_profile_path
 - else
+  %br
+  Name:
   = @student.student_profile.name
+  %br
+  Native language:
   = @student.student_profile.native_language
+  %br
+  Learning objectives:
   = @student.student_profile.learning_objectives
+  %br
   = link_to 'Edit profile', edit_student_profile_path(@student.student_profile.id)
   - unless @student.has_a_teacher
+    %br
     = link_to 'Find a teacher', teacher_profiles_path

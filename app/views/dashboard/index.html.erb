@@ -1,5 +1,6 @@
 <% if current_student %>
   <%= @student.email %>'s dashboard
+  <br>
   <%= link_to "My profile", student_profile_path(:id => @student.id) %>
   <% if @student.has_a_teacher %>
     Current teacher:
