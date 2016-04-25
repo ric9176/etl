@@ -4,6 +4,13 @@
   %h1 You do not have a profile yet
   = link_to 'Create Profile', new_teacher_profile_path
 - else
+  %br
+  Name:
   = @teacher.teacher_profile.name
+  %br
+  Bio:
   = @teacher.teacher_profile.bio
+  %br
   = link_to 'Edit profile', edit_teacher_profile_path(@teacher.teacher_profile.id)
+  %br
+  = link_to 'Back to Dashboard', dashboard_path
