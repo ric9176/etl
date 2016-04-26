@@ -25,7 +25,7 @@ class TeacherProfilesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
@@ -39,7 +39,7 @@ class TeacherProfilesController < ApplicationController
   private
 
   def profile_params
-   params.require(:teacher_profile).permit(:name, :bio)
+   params.require(:teacher_profile).permit(:name, :bio, :skype_username)
   end
 
   def set_teacher_profile

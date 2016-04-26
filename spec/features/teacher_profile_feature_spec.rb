@@ -16,6 +16,7 @@ feature 'teacher_profiles' do
       make_teacher_profile
       expect(page).to have_content('Test teacher')
       expect(page).to have_content('I am a great teacher')
+      expect(page).to have_content('teacherskype')
     end
 
     context 'teacher tries to create profile without necessary fields' do
