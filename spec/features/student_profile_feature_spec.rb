@@ -17,6 +17,7 @@ feature 'student_profiles' do
       expect(page).to have_content('Test student')
       expect(page).to have_content('French')
       expect(page).to have_content('Learn english')
+      expect(page).to have_content('studentskype')
     end
 
     context 'student tries to create profile without necessary fields' do
