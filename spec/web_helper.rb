@@ -50,10 +50,11 @@ def teacher_log_out_then_sign_in
   click_button 'Log in'
 end
 
-def make_student_profile(name='Test student', native_language='French', learning_objectives='Learn english')
+def make_student_profile(name='Test student', native_language='French', learning_objectives='Learn english', skype='studentskype')
   click_link 'My profile'
   click_link 'Create Profile'
   fill_in 'Name', with: name
+  fill_in 'Skype username', with: skype
   fill_in 'Native language', with: native_language
   fill_in 'Learning objectives', with: learning_objectives
   click_button 'Create Student profile'
@@ -64,6 +65,6 @@ def make_teacher_profile(name='Test teacher', bio='I am a great teacher', skype=
   click_link 'Create Profile'
   fill_in 'Name', with: name
   fill_in 'Bio', with: bio
-  fill_in 'Skype username', with: 'teacherskype'
+  fill_in 'Skype username', with: skype
   click_button 'Create Teacher profile'
 end

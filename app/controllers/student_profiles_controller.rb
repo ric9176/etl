@@ -35,7 +35,7 @@ class StudentProfilesController < ApplicationController
 private
 
   def profile_params
-   params.require(:student_profile).permit(:name, :native_language, :learning_objectives)
+   params.require(:student_profile).permit(:name, :native_language, :learning_objectives, :skype_username)
   end
 
   def set_student_profile
