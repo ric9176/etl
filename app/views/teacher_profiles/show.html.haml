@@ -11,6 +11,8 @@
   Bio:
   = @teacher.teacher_profile.bio
   %br
+  = @teacher.teacher_profile.skype_username
+  %br
   = link_to 'Edit profile', edit_teacher_profile_path(@teacher.teacher_profile.id)
   %br
   = link_to 'Back to Dashboard', dashboard_path

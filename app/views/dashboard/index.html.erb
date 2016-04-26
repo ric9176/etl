@@ -8,7 +8,11 @@
     <br>
     Current teacher:
     <% @student.current_teachers.each do |relationship| %>
+      Name:
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
+      <br>
+      Skype username:
+      <%= @teachers.find(relationship.teacher_id).teacher_profile.skype_username %>
       <br>
     <% end %>
     <br>
