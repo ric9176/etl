@@ -7,6 +7,7 @@
     <br>
     <br>
     Current teacher:
+    <br>
     <% @student.current_teachers.each do |relationship| %>
       Name:
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
@@ -42,7 +43,10 @@
     <br>
     <% if relationship.request_status == true %>
       Current students:
+      Name:
       <%= @students.find(relationship.student_id).student_profile.name %>
+      Skype username:
+      <%= @students.find(relationship.student_id).student_profile.skype_username %>
       <%= link_to 'Add class', {controller: "class_materials", action: "new", student_id: relationship.student_id} %>
       <%= link_to 'Classes', class_material_path(@students.find(relationship.student_id)) %>
     <% else %>

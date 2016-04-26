@@ -10,6 +10,7 @@ describe StudentProfile, type: :model do
     it { is_expected.to respond_to(:name) }
     it { is_expected.to respond_to(:native_language) }
     it { is_expected.to respond_to(:learning_objectives) }
+    it { is_expected.to respond_to(:skype_username)}
   end
   context 'Student profile validations' do
     it { should validate_presence_of(:name) }
