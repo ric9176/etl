@@ -15,8 +15,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'haml'
 
-gem 'bootstrap'
-
 gem 'devise'
 
 gem 'sprockets-rails'
