@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :students
   resources :student_profiles
   resources :teacher_profiles
-  resources :class_materials
+  resources :class_materials, only: [:show, :new, :create]
   resources :relationships, only: [:create, :update, :destroy]
 
 

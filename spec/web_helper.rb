@@ -59,10 +59,11 @@ def make_student_profile(name='Test student', native_language='French', learning
   click_button 'Create Student profile'
 end
 
-def make_teacher_profile(name='Test teacher', bio='I am a great teacher')
+def make_teacher_profile(name='Test teacher', bio='I am a great teacher', skype='teacherskype')
   click_link 'My profile'
   click_link 'Create Profile'
   fill_in 'Name', with: name
   fill_in 'Bio', with: bio
+  fill_in 'Skype username', with: 'teacherskype'
   click_button 'Create Teacher profile'
 end

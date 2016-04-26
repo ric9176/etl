@@ -11,7 +11,7 @@ feature 'student_dashboards' do
     scenario 'student can see pending teacher requests on their dashboard' do
       student = Student.create(email: 'student@test.com', password: 'testtest')
       teacher = Teacher.create(email: 'teacher@test.com', password: 'testtest')
-      teacher_profile = TeacherProfile.create(name: 'Test Teacher', bio: 'I rock out')
+      teacher_profile = TeacherProfile.create(name: 'Test Teacher', bio: 'I rock out', skype_username: 'teacherskype')
       teacher.teacher_profile = teacher_profile
       relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id, request_status: false)
       student_sign_in
@@ -22,12 +22,13 @@ feature 'student_dashboards' do
     scenario 'student can see current teacher on their dashboard' do
       student = Student.create(email: 'student@test.com', password: 'testtest')
       teacher = Teacher.create(email: 'teacher@test.com', password: 'testtest')
-      teacher_profile = TeacherProfile.create(name: 'Test Teacher', bio: 'I rock out')
+      teacher_profile = TeacherProfile.create(name: 'Test Teacher', bio: 'I rock out', skype_username: 'teacherskype')
       teacher.teacher_profile = teacher_profile
       relationship = Relationship.create(student_id: student.id, teacher_id: teacher.id, request_status: true)
       student_sign_in
       expect(page).to have_content 'Current teacher:'
       expect(page).to have_content 'Test Teacher'
+      expect(page).to have_content 'teacherskype'
     end
   end
 end

@@ -1,7 +1,9 @@
 class ClassMaterialsController < ApplicationController
+  before_action :class_params, only: :create
+  before_action :set_student, only: :show
+  before_action :authenticate_clients!
 
   def show
-    @student = Student.find(params[:id])
   end
 
   def new
@@ -24,5 +26,9 @@ private
 
   def class_params
    params.require(:class_material).permit(:date, :link)
+  end
+
+  def set_student
+    @student = Student.find(params[:id])
   end
 end

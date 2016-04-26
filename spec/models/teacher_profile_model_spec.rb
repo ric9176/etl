@@ -9,6 +9,7 @@ describe TeacherProfile, type: :model do
     subject(:teacher) { TeacherProfile.new }
     it { is_expected.to respond_to(:name) }
     it { is_expected.to respond_to(:bio) }
+    it { is_expected.to respond_to(:skype_username) }
   end
   context 'Teacher profile validations' do
     it { should validate_presence_of(:name) }
