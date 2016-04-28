@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'haml'
 
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+
 gem 'bootstrap'
 
 gem 'devise'
