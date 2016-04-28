@@ -1,19 +1,24 @@
-%nav
-  = link_to "ETL", root_path, class: "navbar-brand"
-  %ul
-    %li
-      %a{:href => "/"}
-        Home
-        %span(current)
-    %li
-      %a{:href => "/why_us"} Why Us
-    %li
-      %a{:href => "/services"} Services
-    %li
-      %a{:href => "/pricing"} Pricing
-    %li
-      %a{:href => "/book_a_free_lesson"} Book a Free Lesson
-    %li
-      %a{:href => "/contact"} Contact
-    %li
-      %a{:href => "/blog"} Blog
+%article
+  %section
+    %ul.nav-tabs
+      %li.home-tab
+        %a.active{:href => "#ETL"}ETL
+        -# %a.active= link_to "ETL", root_path
+      %li.nav-tabs
+        %a{:href => "#why_us"}Why Us
+      %li.nav-tabs
+        %a{:href => "#services"}Services
+      %li.nav-tabs
+        %a{:href => "#pricing"}Pricing
+      %li.nav-tabs
+        %a{:href => "#book_a_free_lesson"}Book a Free Lesson
+      %li.nav-tabs
+        %a{:href => "#contact"}Contact
+      %li.nav-tabs
+        %a{:href => "#blog"}Blog
+
+  -# %ul
+  -#   %li
+  -#     %a{:href => "/"}
+  -#       ETL
+  -#       %span(current)
