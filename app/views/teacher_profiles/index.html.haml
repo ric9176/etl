@@ -1,19 +1,12 @@
-%p#notice= notice
-%h1 Teachers
 #teacher_profiles
-  %table
-    %thead
-      %tr
-        %th Picture
-        %th Name
-        %th Bio
-        %th{:colspan => "2"}
-    %tbody
-      - @teachers.each do |teacher|
-        - if teacher.teacher_profile
-          %tr
-            %td= image_tag teacher.teacher_profile.image.url(:medium)
-            %td= link_to "Send request to #{teacher.teacher_profile.name}", {controller: "relationships", action: "create", teacher_id: teacher.id}, method: :post
-            %td= teacher.teacher_profile.bio
-            - if teacher == current_teacher
-              %td= link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile)
+  %p#notice= notice
+  %h1 Teachers
+  - @teachers.each do |teacher|
+    .teacher_profile_box
+      - if teacher.teacher_profile
+        = image_tag teacher.teacher_profile.image.url(:medium)
+        = link_to "Send request to #{teacher.teacher_profile.name}", {controller: "relationships", action: "create", teacher_id: teacher.id}, method: :post
+        = teacher.teacher_profile.bio
+        %br
+        - if teacher == current_teacher
+          = link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile)

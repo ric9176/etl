@@ -1,3 +1,16 @@
 // Place all the styles related to the TeacherProfiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#teacher_profiles {
+  margin: 0 auto;
+}
+
+.teacher_profile_box {
+  margin: 5px;
+  width: 241px;
+}
+
+.teacher_profile_box img {
+  width: 100%;
+}
