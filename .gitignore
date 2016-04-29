@@ -13,3 +13,4 @@
 /tmp
 /coverage
 public/assets/**
+/public/system/*
