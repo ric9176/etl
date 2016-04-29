@@ -19,7 +19,7 @@ gem 'masonry-rails'
 
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
-gem 'bootstrap'
+gem 'bootstrap-sass'
 
 gem 'devise'
 
