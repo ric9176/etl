@@ -18,7 +18,8 @@ class RelationshipsController < ApplicationController
   def update
     @student = Student.find(@relationship.student_id)
     if @student.has_a_teacher
-      redirect_to '/dashboard', notice: 'Sorry, another teacher took on this student before you.'
+      @relationship.destroy
+      redirect_to '/dashboard', notice: 'Sorry, another teacher took on this student before you. This request has been destroyed.'
     else
       @relationship.request_status = true
       @relationship.save
