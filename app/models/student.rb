@@ -28,4 +28,8 @@ class Student < ActiveRecord::Base
   def class_materials_with(teacher)
     self.class_materials.where(teacher_id: teacher.id)
   end
+
+  def has_already_requested(teacher)
+    self.relationships.where(teacher_id: teacher.id).any?
+  end
 end
