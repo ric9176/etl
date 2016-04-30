@@ -7,7 +7,7 @@ class RelationshipsController < ApplicationController
   # refactors: is a callback needed/possible for relationship params?
 
   def create
-    if current_student.relationships.where(teacher_id: @teacher.id).any?
+    if current_student.has_already_requested(@teacher)
       redirect_to '/teacher_profiles', notice: 'You have already requested this teacher'
     else
       @relationship = Relationship.create(teacher_id: @teacher.id, student_id: current_student.id)
