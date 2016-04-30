@@ -7,8 +7,12 @@ class RelationshipsController < ApplicationController
   # refactors: is a callback needed/possible for relationship params?
 
   def create
-    @relationship = Relationship.create(teacher_id: @teacher.id, student_id: current_student.id)
-    redirect_to '/dashboard'
+    if current_student.relationships.where(teacher_id: @teacher.id).any?
+      redirect_to '/teacher_profiles', notice: 'You have already requested this teacher'
+    else
+      @relationship = Relationship.create(teacher_id: @teacher.id, student_id: current_student.id)
+      redirect_to '/dashboard'
+    end
   end
 
   def update
@@ -23,7 +27,7 @@ class RelationshipsController < ApplicationController
 
   def destroy
     if @relationship.destroy
-      redirect_to '/dashboard', notice: 'Request declined successfully'
+      redirect_to '/dashboard', notice: 'Request successfully destroyed'
     else
       redirect_to '/dashboard', notice: 'Request declined successfully'
     end

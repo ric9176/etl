@@ -75,4 +75,18 @@ feature 'teacher requests' do
     click_link 'Undo request'
     expect(page).to have_no_content('Pending requests: Test teacher')
   end
+
+  scenario 'does not allow student to send more than one request to a teacher' do
+    teacher = Teacher.create(email: 'teacher@test.com', password: 'test12345')
+    teacher_profile = TeacherProfile.create(name: 'Test teacher', bio: 'I rock out')
+    teacher.teacher_profile = teacher_profile
+    student_sign_up
+    make_student_profile
+    click_link 'Find a teacher'
+    click_link 'Test teacher'
+    click_link 'My profile'
+    click_link 'Find a teacher'
+    click_link 'Test teacher'
+    expect(page).to have_content('You have already requested this teacher')
+  end
 end
