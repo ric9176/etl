@@ -31,6 +31,7 @@
     Pending requests:
     <% @student.pending_teacher_requests.each do |relationship| %>
       <%= @teachers.find(relationship.teacher_id).teacher_profile.name %>
+      <%= link_to 'Undo request', relationship_path(relationship.id), method: :delete %>
     <% end %>
   <% end %>
 

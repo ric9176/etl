@@ -73,6 +73,6 @@ feature 'teacher requests' do
     click_link 'Find a teacher'
     click_link 'Test teacher'
     click_link 'Undo request'
-    expect(page).not.to have_content('Pending requests: Test teacher')
+    expect(page).to have_no_content('Pending requests: Test teacher')
   end
 end
