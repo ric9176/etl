@@ -63,4 +63,16 @@ feature 'teacher requests' do
     expect(page).not_to have_content('Current students:')
     expect(page).not_to have_content('Test student')
   end
+
+  scenario 'students should be able to undo requests' do
+    teacher = Teacher.create(email: 'teacher@test.com', password: 'test12345')
+    teacher_profile = TeacherProfile.create(name: 'Test teacher', bio: 'I rock out')
+    teacher.teacher_profile = teacher_profile
+    student_sign_up
+    make_student_profile
+    click_link 'Find a teacher'
+    click_link 'Test teacher'
+    click_link 'Undo request'
+    expect(page).not.to have_content('Pending requests: Test teacher')
+  end
 end
