@@ -4,7 +4,7 @@
   %h1 Teachers
   #teachers.transitions-enabled
     - @teachers.each do |teacher|
-      .teacher_profile_box.box.panel.panel-default
+      .teacher_profile_box.panel.panel-default
         - if teacher.teacher_profile
           = image_tag teacher.teacher_profile.image.url(:medium)
           = link_to "#{teacher.teacher_profile.name}", {controller: "relationships", action: "create", teacher_id: teacher.id}, method: :post

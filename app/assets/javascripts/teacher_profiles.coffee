@@ -1,5 +1,5 @@
 $ ->
   $('#teachers').imagesLoaded ->
     $('#teachers').masonry
-      itemSelector: '.box'
+      itemSelector: '.teacher_profile_box'
       isFitWidth: true
