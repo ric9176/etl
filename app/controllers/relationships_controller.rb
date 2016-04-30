@@ -16,11 +16,13 @@ class RelationshipsController < ApplicationController
   end
 
   def update
-    @relationship.request_status = true
-    if @relationship.save
-      redirect_to '/dashboard', notice: 'Request confirmed successfully'
+    @student = Student.find(@relationship.student_id)
+    if @student.has_a_teacher
+      redirect_to '/dashboard', notice: 'Sorry, another teacher took on this student before you.'
     else
-      redirect_to '/dashboard', notice: 'Request unsuccessesful, please try again later'
+      @relationship.request_status = true
+      @relationship.save
+      redirect_to '/dashboard', notice: 'Request confirmed successfully'
     end
   end
 
@@ -38,6 +40,7 @@ class RelationshipsController < ApplicationController
   def set_teacher
     @teacher = Teacher.find(params[:teacher_id])
   end
+
 
   def set_relationship
     @relationship = Relationship.find(params[:id])
