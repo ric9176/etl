@@ -58,10 +58,21 @@
         Can You Really Improve Your English From Home?
       - if current_student
         %end
-      %h3
-        Yes! You can now learn English online with Skype English classes, enjoy high quality engaging lessons given by our trusted native English teachers - no matter where in the world you are.
       %a.btn.btn-default.btn-lg{:href => "#about"}
         Continue
+  %section#book-a-free-lesson
+  .pad-section.why-us
+    .container
+      .row
+        -# .col-sm-6
+        .col-sm-6.text-center
+    %article
+      %h3
+        Yes! You can now learn English online with Skype English classes, enjoy high quality engaging lessons given by our trusted native English teachers - no matter where in the world you are.
+      %h1
+        StaticPages#book_a_free_lesson
+      %p
+        Find me in app/views/static_pages/book_a_free_lesson.html.haml
   %section
   .pad-section.why-us
     .container
@@ -90,7 +101,6 @@
             %li
               Reschedule Your Classes Without Penalty We understand that you probably lead a busy life. That”s why you have the ability to cancel classes 12 hours in advance without having to pay for that class.
   %section
-    / Pricing Table Section
     %section#pricing-table
       .container
         .row
@@ -170,7 +180,8 @@
                     %li
                       %i.fa.fa-smile-o>
                       first 10 day free
-    %article.services
+  %section#services
+    %article
       %h1
         Our range of services will help you learn English on your terms, focusing on your specific needs
       %p
@@ -246,14 +257,7 @@
         We are online translators who are happy to work with you or independently to translate texts on a wide range of subjects. Although we translate into English primarily from Spanish, send us an inquiry about a text you’d like translated from another language and we will try to meet your needs. We also provide translations into Spanish, upon request. English Tutors Live prides itself on providing hassle and error free translations by skilled translators.
       %h5
         **Translation services are priced separately from classes, at €25 for the first page, and €0.08 per word thereafter.
-  %section
-  %section
-    %article
-      %h1
-        StaticPages#book_a_free_lesson
-      %p
-        Find me in app/views/static_pages/book_a_free_lesson.html.haml
-  %section
+  %section#contact
     %article
       %h1
         StaticPages#contact
