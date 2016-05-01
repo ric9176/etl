@@ -1,22 +1,54 @@
-%nav.navbar.navbar-full.navbar-dark.bg-inverse
-  = link_to "ETL", root_path, class: "navbar-brand"
-  %button.navbar-toggler.hidden-sm-up.pull-xs-right{"data-target" => "#exCollapsingNavbar2", "data-toggle" => "collapse", :type => "button"}
-    ☰
-  #exCollapsingNavbar2.collapse.navbar-toggleable-xs
-    %ul.nav.navbar-nav.pull-xs-right
-      %li.nav-item.active
-        %a.nav-link{:href => "/"}
-          Home
-          %span.sr-only (current)
-      %li.nav-item
-        %a.nav-link{:href => "/why_us"} Why Us
-      %li.nav-item
-        %a.nav-link{:href => "/services"} Services
-      %li.nav-item
-        %a.nav-link{:href => "/pricing"} Pricing
-      %li.nav-item
-        %a.nav-link{:href => "/book_a_free_lesson"} Book a Free Lesson
-      %li.nav-item
-        %a.nav-link{:href => "/contact"} Contact
-      %li.nav-item
-        %a.nav-link{:href => "/blog"} Blog
+%nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
+  -# = link_to "ETL", root_path, class: "navbar-brand"
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#navbar-collapse-main", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only
+          Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"}
+        ETL
+
+    .collapse.navbar-collapse#navbar-collapse-main
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "/"}
+            Home
+        %li
+          %a{:href => "/why_us"}
+            Why Us
+        %li
+          %a{:href => "/services"}
+            Services
+        %li
+          %a{:href => "/pricing"}
+            Pricing
+        %li
+          %a{:href => "/book_a_free_lesson"}
+            Book a Free Lesson
+        %li
+          %a{:href => "/contact"}
+            Contact
+        %li
+          %a{:href => "/blog"}
+            Blog
+  -# #exCollapsingNavbar2.collapse.navbar-toggleable-xs
+  -#   %ul.nav.navbar-nav.pull-xs-right
+  -#     %li.nav-item.active
+  -#       %a.nav-link{:href => "/"}
+  -#         Home
+  -#         %span.sr-only (current)
+  -#     %li.nav-item
+  -#       %a.nav-link{:href => "/why_us"} Why Us
+  -#     %li.nav-item
+  -#       %a.nav-link{:href => "/services"} Services
+  -#     %li.nav-item
+  -#       %a.nav-link{:href => "/pricing"} Pricing
+  -#     %li.nav-item
+  -#       %a.nav-link{:href => "/book_a_free_lesson"} Book a Free Lesson
+  -#     %li.nav-item
+  -#       %a.nav-link{:href => "/contact"} Contact
+  -#     %li.nav-item
+  -#       %a.nav-link{:href => "/blog"} Blog

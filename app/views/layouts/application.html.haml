@@ -1,11 +1,12 @@
 !!!
 %html
   %head
-    %title Etl
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %title
+      Etl
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true
+    = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    -# %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
   %body
     - if student_signed_in?
       Welcome, #{current_student.email}
@@ -16,6 +17,11 @@
       = link_to "Student sign in", new_student_session_path
       = link_to "Teacher sign in", new_teacher_session_path
     = render 'layouts/header'
+    -# = render 'static_pages/why_us'
+    -# = render 'static_pages/services'
+    -# = render 'static_pages/pricing'
+    -# = render 'static_pages/book_a_free_lesson'
+    -# = render 'static_pages/contact'
     .container
       - flash.each do |name, msg|
         = content_tag(:div, msg, class: "alert alert-info")
