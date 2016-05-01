@@ -104,7 +104,7 @@ footer .glyphicon:hover {
 }
 #pricing-table {
   padding-top: 50px;
-  background: url('pricing-bg.jpg');
+  background: url('pricing-bg.jpg') fixed;
 }
 #pricing-table .pricing {
   marign: 0;
@@ -113,6 +113,7 @@ footer .glyphicon:hover {
 }
 #pricing-table .pricing .pricing-table {
   padding-bottom: 30px;
+  opacity: 0;
 }
 #pricing-table .pricing .pricing-table .pricing-header {
   position: relative;
