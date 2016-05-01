@@ -37,7 +37,11 @@ html, body {
   background-size: cover;
 }
 
-#about {
+.why-us {
+  background: url('book.png') no-repeat center center fixed;
+}
+.why-us h1 {
+  text-align: center;
 }
 
 #services {
