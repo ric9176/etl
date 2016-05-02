@@ -6,16 +6,7 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true
     = javascript_include_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
-    -# %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
   %body
-    - if student_signed_in?
-      Welcome, #{current_student.email}
-      = link_to "Log out", destroy_student_session_path(protocol: "https"), method: :delete
-    - elsif teacher_signed_in?
-      = link_to "Log out", destroy_teacher_session_path(protocol: "https"), method: :delete
-    - else
-      = link_to "Student sign in", new_student_session_path
-      = link_to "Teacher sign in", new_teacher_session_path
   %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
     -# = link_to "ETL", root_path, class: "navbar-brand"
     .container-fluid
@@ -26,31 +17,33 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand{:href => "#"}
+        %a.navbar-brand{:href => "/"}
           ETL
       .collapse.navbar-collapse#navbar-collapse-main
         %ul.nav.navbar-nav.navbar-right
           %li
-            %a{:href => "/"}
-              Home
-          %li
-            %a{:href => "/why_us"}
+            %a{:href => "#why_us"}
               Why Us
           %li
-            %a{:href => "/services"}
+            %a{:href => "#services"}
               Services
           %li
-            %a{:href => "/pricing"}
+            %a{:href => "#pricing"}
               Pricing
-          %li
-            %a{:href => "/book_a_free_lesson"}
-              Book a Free Lesson
-          %li
-            %a{:href => "/contact"}
-              Contact
-          %li
-            %a{:href => "/blog"}
-              Blog
+          - if student_signed_in?
+            Welcome, #{current_student.email}
+            %li
+              = link_to "Log out", destroy_student_session_path(protocol: "https"), method: :delete
+          - elsif teacher_signed_in?
+            %li
+              = link_to "Log out", destroy_teacher_session_path(protocol: "https"), method: :delete
+          - else
+            %li
+              %a{:href => "students/sign_in"}
+                Student Sign In
+            %li
+              %a{:href => "/teachers/sign_in"}
+                Teacher Sign In
   %section
   .home#home
     .text-vcenter
@@ -58,7 +51,7 @@
         Can You Really Improve Your English From Home?
       - if current_student
         %end
-      %a.btn.btn-default.btn-lg{:href => "#about"}
+      %a.btn.btn-default.btn-lg{:href => "#book-a-free-lesson"}
         Continue
   %section#book-a-free-lesson
   .pad-section.why-us
@@ -73,7 +66,7 @@
         StaticPages#book_a_free_lesson
       %p
         Find me in app/views/static_pages/book_a_free_lesson.html.haml
-  %section
+  %section#why_us
   .pad-section.why-us
     .container
       .row
@@ -100,7 +93,7 @@
               No Contracts We don’t believe in forcing you to commit to any number of classes. That’s why we offer the choice to purchase single classes. Of course, for significant savings, you can purchase classes in blocks of 5, 10 or more.
             %li
               Reschedule Your Classes Without Penalty We understand that you probably lead a busy life. That”s why you have the ability to cancel classes 12 hours in advance without having to pay for that class.
-  %section
+  %section#pricing
     %section#pricing-table
       .container
         .row
