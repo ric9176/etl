@@ -40,17 +40,7 @@ html, body {
 .why-us h1 {
   text-align: center;
 }
-#services .glyphicon {
-  border: 2px solid #FFFFFF;
-  border-radius: 50%;
-  display: inline-block;
-  font-size: 60px;
-  height: 140px;
-  line-height: 140px;
-  text-align: center;
-  vertical-align: middle;
-  width: 140px;
-}
+
 #information {
   background: url(coffeeShop1.png) no-repeat center center fixed;
   display: table;
@@ -77,6 +67,26 @@ footer .glyphicon {
 }
 footer .glyphicon:hover {
   color: #306d9f;
+}
+
+// SERVICES
+#services {
+  background: url('services_bg.jpg') no-repeat center center fixed;
+  color: white;
+}
+
+.glyphicon {
+  font-size: 8em;
+  height: 140px;
+  line-height: 140px;
+  text-align: center;
+  vertical-align: middle;
+  width: 140px;
+  color: white;
+}
+
+.icon {
+  text-align: center;
 }
 
 // PRICING CSS
