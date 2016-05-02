@@ -1,22 +1,24 @@
-%nav.navbar.navbar-full.navbar-dark.bg-inverse
-  = link_to "ETL", root_path, class: "navbar-brand"
-  %button.navbar-toggler.hidden-sm-up.pull-xs-right{"data-target" => "#exCollapsingNavbar2", "data-toggle" => "collapse", :type => "button"}
-    ☰
-  #exCollapsingNavbar2.collapse.navbar-toggleable-xs
-    %ul.nav.navbar-nav.pull-xs-right
-      %li.nav-item.active
-        %a.nav-link{:href => "/"}
-          Home
-          %span.sr-only (current)
-      %li.nav-item
-        %a.nav-link{:href => "/why_us"} Why Us
-      %li.nav-item
-        %a.nav-link{:href => "/services"} Services
-      %li.nav-item
-        %a.nav-link{:href => "/pricing"} Pricing
-      %li.nav-item
-        %a.nav-link{:href => "/book_a_free_lesson"} Book a Free Lesson
-      %li.nav-item
-        %a.nav-link{:href => "/contact"} Contact
-      %li.nav-item
-        %a.nav-link{:href => "/blog"} Blog
+%nav.navbar.navbar-default.bg-inverse
+  %div.container-fluid
+    %div.navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button", "aria-expanded" => "false"}
+        .span.sr-only Toggle navigation
+        .span.icon-bar
+        .span.icon-bar
+        .span.icon-bar
+      %ul.nav.navbar-nav.pull-right
+
+        %li
+          %a.navbar-brand= link_to "ETL", root_path
+        %li.nav-item
+          %a.nav-link{:href => "/why_us"} Why Us
+        %li.nav-item
+          %a.nav-link{:href => "/services"} Services
+        %li.nav-item
+          %a.nav-link{:href => "/pricing"} Pricing
+        %li.nav-item
+          %a.nav-link{:href => "/book_a_free_lesson"} Book a Free Lesson
+        %li.nav-item
+          %a.nav-link{:href => "/contact"} Contact
+        %li.nav-item
+          %a.nav-link{:href => "/blog"} Blog
