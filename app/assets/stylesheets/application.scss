@@ -4,14 +4,12 @@ html, body {
   height: 100%;
   width: 100%;
 }
-
 .pad-section {
   padding: 50px 0;
 }
 .pad-section img {
   width: 100%;
 }
-
 .text-vcenter {
   display: table-cell;
   text-align: center;
@@ -22,11 +20,11 @@ html, body {
   font-weight: 700;
   margin: 0;
   padding: 0;
+  padding-bottom: 20px;
 }
-
 #home {
   color: white;
-  background: url('coffeeShop2.png') no-repeat center center fixed;
+  background: url('coffeeShop2_blur(15).jpeg') no-repeat center center fixed;
   display: table;
   height: 100%;
   position: relative;
@@ -36,17 +34,11 @@ html, body {
   -o-background-size: cover;
   background-size: cover;
 }
-
 .why-us {
   background: url('book.png') no-repeat center center fixed;
 }
 .why-us h1 {
   text-align: center;
-}
-
-#services {
-  background-color: #306d9f;
-  color: #ffffff;
 }
 #services .glyphicon {
   border: 2px solid #FFFFFF;
@@ -59,7 +51,6 @@ html, body {
   vertical-align: middle;
   width: 140px;
 }
-
 #information {
   background: url(coffeeShop1.png) no-repeat center center fixed;
   display: table;
@@ -74,9 +65,11 @@ html, body {
 #information .panel {
   opacity: 0.85;
 }
-
 footer {
-  padding: 20px 0;
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  color: #5e5e5e;
+  padding: 20px 5px;
 }
 footer .glyphicon {
   color: #333333;

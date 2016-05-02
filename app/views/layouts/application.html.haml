@@ -258,11 +258,13 @@
       %h5
         **Translation services are priced separately from classes, at €25 for the first page, and €0.08 per word thereafter.
   %section#contact
-    %article
-      %h1
-        StaticPages#contact
+    %footer
+      .container
+      %article
+      %p.text-left
+        EnglishTutorsLive
       %p
-        Find me in app/views/static_pages/contact.html.haml
+        info@englishtutorslive.com
     .container
       - flash.each do |name, msg|
         = content_tag(:div, msg, class: "alert alert-info")
