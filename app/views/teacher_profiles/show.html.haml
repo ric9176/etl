@@ -5,6 +5,8 @@
   = link_to 'Create Profile', new_teacher_profile_path
 - else
   %br
+  = image_tag @teacher.teacher_profile.image.url(:medium)
+  %br
   Name:
   = @teacher.teacher_profile.name
   %br
