@@ -16,6 +16,7 @@ html, body {
   vertical-align: middle;
 }
 .text-vcenter h1 {
+  color: white;
   font-size: 4.5em;
   font-weight: 700;
   margin: 0;
@@ -33,9 +34,6 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-.why-us {
-  background: url('book.png') no-repeat center center fixed;
 }
 .why-us h1 {
   text-align: center;
