@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -19,7 +18,6 @@ gem 'haml'
 gem 'masonry-rails', '~> 0.2.0'
 
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
-
 
 
 gem 'devise'
