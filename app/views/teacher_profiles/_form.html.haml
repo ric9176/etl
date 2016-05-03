@@ -1,4 +1,4 @@
-= form_for(@teacher_profile) do |f|
+= form_for @teacher_profile, html: { multipart: true } do |f|
   - if @teacher_profile.errors.any?
     #error_explanation
       %h2
@@ -8,6 +8,8 @@
         - @teacher_profile.errors.full_messages.each do |msg|
           %li= msg
   .form-group
+    = f.label :image
+    = f.file_field :image, class: "form-control"
     = f.label :name
     = f.text_field :name, class: "form-control"
     = f.label :skype_username

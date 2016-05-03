@@ -39,7 +39,7 @@ class TeacherProfilesController < ApplicationController
   private
 
   def profile_params
-   params.require(:teacher_profile).permit(:name, :bio, :skype_username)
+   params.require(:teacher_profile).permit(:name, :bio, :skype_username, :image)
   end
 
   def set_teacher_profile
