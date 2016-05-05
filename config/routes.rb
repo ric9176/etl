@@ -8,21 +8,10 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :update, :destroy]
 
 
-  root "static_pages#home"
+  root to: "static_pages#index"
 
   get "dashboard" => "dashboard#index"
 
-  get "why_us" => "static_pages#why_us"
-
-  get "services" => "static_pages#services"
-
-  get "pricing" => "static_pages#pricing"
-
-  get "book_a_free_lesson" => "static_pages#book_a_free_lesson"
-
-  get "contact" => "static_pages#contact"
-
-  get "blog" => "static_pages#blog"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
