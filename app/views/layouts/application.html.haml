@@ -38,11 +38,12 @@
               = link_to "Log out", destroy_teacher_session_path(protocol: "https"), method: :delete
           - else
             %li
-              %a{:href => "students/sign_in", 'data-toggle' => 'modal', 'data-target' => '#myModal'}
+              %a{:url => "/students/sign_in", :href =>"../devise/sessions/new", "data-toggle" => "modal", "data-target" => "#myModal"}
                 Student Sign In
             %li
-              %a{:href => "/teachers/sign_in", 'data-toggle' => 'modal', 'data-target' => '#myModal'}
+              %a{:url => "/teachers/sign_in", :href => "../devise/sessions/new", "data-toggle" => "modal", "data-target" => "#myModal"}
                 Teacher Sign In
+
   %section
   .home#home
     .text-vcenter
