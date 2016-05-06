@@ -2,3 +2,7 @@ html, body {
   height: 100%;
   width: 100%;
 }
+
+nav.hidden {
+  transform: translate3d(0, -100%, 0);
+}
