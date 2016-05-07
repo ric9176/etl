@@ -1,6 +1,3 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 .pad-section.landing-page {
@@ -33,8 +30,28 @@
   -o-background-size: cover;
   background-size: cover;
 }
+.about-etl {
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  vertical-align: middle;
+}
 .why-us {
-  background: url('book.png') no-repeat center center fixed;
+  color: black;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .why-us h1 {
   text-align: center;
@@ -52,9 +69,20 @@ footer .glyphicon {
 footer .glyphicon:hover {
   color: #306d9f;
 }
-#services {
-  background: url('services_bg.jpg') no-repeat center center fixed;
+.services {
   color: white;
+  background: url('services_bg.jpg') no-repeat center center fixed;
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.services h1, h2 {
+  text-align: center;
 }
 .glyphicon {
   font-size: 8em;
@@ -65,9 +93,6 @@ footer .glyphicon:hover {
   width: 140px;
   color: white;
   border: 0px;
-}
-.icon {
-  text-align: center;
 }
 .btn-custom {
   color: #bdc3c7;
@@ -83,7 +108,7 @@ footer .glyphicon:hover {
   background: url('pricing-bg.jpg') fixed;
 }
 #pricing-table .pricing {
-  marign: 0;
+  margin: 0;
   padding: 0;
   font-family: 'Robot', sans-serif;
 }

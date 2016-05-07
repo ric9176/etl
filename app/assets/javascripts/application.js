@@ -40,3 +40,16 @@ $(document).ready(function() {
   fadeInOnScroll('.pricing-rate', '.table_three', 500);
   fadeInOnScroll('.pricing-rate', '.table_three', 500);
 });
+
+var documentElem = $(document),
+    nav = $('nav'),
+    lastScrollTop = 0;
+
+  documentElem.on('scroll', function() {
+    var currentScrollTop = $(this).scrollTop();
+
+    if(currentScrollTop > lastScrollTop) nav.addClass('hidden');
+    else nav.removeClass('hidden');
+
+    lastScrollTop = currentScrollTop;
+});
