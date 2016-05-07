@@ -170,24 +170,50 @@
 #pricing-table .pricing .pricing-list ul li span {
   color: #34495e;
 }
-
 .navbar-header img {
     max-height: 100%;
     width: auto;
     margin: 0;
     padding: 0;
 }
-
 .navbar-brand {
   padding: 2px 2px;
   padding-left: 15px;
 }
-
 .modal-header{
   border: 0px;
+  padding: 0;
 }
-
+.modal-header h4{
+  padding-top: 5%;
+  text-wrap: none;
+}
 .modal-content{
-  background: url('modal-bg.jpg') no-repeat center center fixed;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url('modal-bg.jpg') no-repeat center center;
   color: white;
+  border: 0px;
+  padding-left: 5%;
+}
+.login-button{
+  margin-top: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+.login-button{
+  margin-top: 10px;
+  display: block;
+}
+.register-btn a {
+  color: white;
+  text-decoration: none;
+}
+.sign-in-form{
+  border-right: 1px solid white;
+}
+#student_email{
+  background-color: rgba(244, 0, 0, 1.4);
+}
+.textfield{
+    width: 90%;
+    background-color: rgba(244, 0, 0, 1.4);
 }

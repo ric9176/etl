@@ -34,23 +34,23 @@
   .modal-dialog
     .modal-content
       .modal-header
-        %h1 Sign in
-        %button.close{:type => 'button', 'data-dismiss' => 'modal'}
-          &times;
-      .modal-body
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .field
-            = f.label :email
-            %br/
-            = f.email_field :email, autofocus: true
-          .field
-            = f.label :password
-            %br/
-            = f.password_field :password, autocomplete: "off"
-          - if devise_mapping.rememberable?
-            .field
-              = f.check_box :remember_me
-              = f.label :remember_me
-          .actions
-            = f.submit "Log in"
-        = render "devise/shared/links"
+        .container
+          .row
+            .col-md-3.sign-in-form
+              %h1 Sign in
+              = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+                .field
+                  = f.label :email
+                  %br/
+                  = f.email_field :email, autofocus: true, class: 'textfield'
+                .field
+                  = f.label :password
+                  %br/
+                  = f.password_field :password, autocomplete: "off", class: 'textfield'
+                  %br/
+                  = f.submit "Log in", class: "btn btn-success login-button"
+                  = link_to "Forgot your password?", new_password_path(resource_name)
+            .col-md-3
+              %h1 No account?
+              %h4 No problem- First class is on us.
+              %button.btn.btn-primary.btn-large.register-btn= link_to "Register now", new_registration_path(resource_name)
