@@ -2,3 +2,24 @@ html, body {
   height: 100%;
   width: 100%;
 }
+nav.hidden {
+  transform: translate3d(0, -100%, 0);
+}
+footer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  color: #5e5e5e;
+  padding: 20px 5px;
+}
+.footer-row {
+  display: inline-block;
+}
+.footer-elem {
+  vertical-align: middle;
+  width: 25%;
+}
