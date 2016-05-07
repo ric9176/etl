@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
-$white-colour: #FFFFFF;
-$grey-colour: #BDC3C7;
+$white-color: #FFFFFF;
+$grey-color: #BDC3C7;
 
 .navbar-header img {
     max-height: 100%;
@@ -24,16 +24,19 @@ $grey-colour: #BDC3C7;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-}
-.text-vcenter h1 {
-  font-size: 4.5em;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  padding-bottom: 20px;
+  h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 25px;
+  }
+  .btn-default {
+    margin-bottom: 260px;
+  }
 }
 .welcome {
-  color: $white-colour;
+  color: $white-color;
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%), url('computer_glasses.jpg') no-repeat center center fixed;
   display: table;
   height: 100%;
@@ -66,12 +69,12 @@ $grey-colour: #BDC3C7;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-.why-us h1 {
-  text-align: center;
+  h1 {
+    text-align: center;
+  }
 }
 .services {
-  color: $white-colour;
+  color: $white-color;
   background: url('services_bg.jpg') no-repeat center center fixed;
   display: table;
   height: 100%;
@@ -84,7 +87,7 @@ $grey-colour: #BDC3C7;
   -o-background-size: cover;
   background-size: cover;
   .glyph-caption {
-    color: $white-colour;
+    color: $white-color;
     padding-bottom: 5%;
   }
   .service-caption{
@@ -104,13 +107,13 @@ $grey-colour: #BDC3C7;
   }
 }
 .btn-custom {
-  color: $grey-colour;
+  color: $grey-color;
   font-size: 18px;
-  border: 1px solid $grey-colour;
+  border: 1px solid $grey-color;
 }
 .btn-custom:hover {
-  color: $white-colour;
-  border: 1px solid $white-colour;
+  color: $white-color;
+  border: 1px solid $white-color;
 }
 .pricing-table {
   padding-top: 50px;
@@ -136,7 +139,7 @@ $grey-colour: #BDC3C7;
   border-top-left-radius: 4px;
 }
 .pricing-table .pricing .pricing-table .pricing-header .pricing-title {
-  color: $white-colour;
+  color: $white-color;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 24px;
@@ -146,7 +149,7 @@ $grey-colour: #BDC3C7;
 .pricing-table .pricing .pricing-table .pricing-header .pricing-rate {
   font-size: 70px;
   font-weight: 700;
-  color: $white-colour;
+  color: $white-color;
   position: relative;
   text-align: center;
 }
@@ -154,16 +157,16 @@ $grey-colour: #BDC3C7;
   font-size: 24px;
   position: relative;
   top: -30px;
-  color: $grey-colour;
+  color: $grey-color;
 }
 .pricing-table .pricing .pricing-table .pricing-header .pricing-rate span {
   font-size: 16px;
-  color: $grey-colour;
+  color: $grey-color;
   text-transform: uppercase;
 }
 .pricing-table .pricing .pricing-list {
   padding: 20px 0 40px 0;
-  background: $white-colour;
+  background: $white-color;
   border: 1px solid #e3e3e3;
 }
 .pricing-table .pricing .pricing-list ul {
@@ -174,7 +177,7 @@ $grey-colour: #BDC3C7;
 .pricing-table .pricing .pricing-list ul li {
   list-style: none;
   border-bottom: 1px solid #EAECEB;
-  color: $grey-colour;
+  color: $grey-color;
   font-size: 16px;
   line-height: 42px;
 }
@@ -183,7 +186,7 @@ $grey-colour: #BDC3C7;
 }
 .pricing-table .pricing .pricing-list ul li i {
   margin-right: 12px;
-  color: $grey-colour;
+  color: $grey-color;
 }
 .pricing-table .pricing .pricing-list ul li span {
   color: #34495e;
@@ -206,32 +209,28 @@ footer {
 }
 .modal-content {
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url('modal-bg.jpg') no-repeat center center;
-  color: $white-colour;
+  color: $white-color;
   border: 0px;
   padding-left: 5%;
   & .modal-header {
     border: 0px;
     padding: 0;
-  }
-  .modal-header h4{
-    padding-top: 5%;
-    text-wrap: none;
+    h4{
+      padding-top: 5%;
+      text-wrap: none;
+    }
   }
   .login-button{
     margin-top: 10px;
     display: block;
     margin-bottom: 10px;
   }
-  .login-button{
-    margin-top: 10px;
-    display: block;
-  }
   .register-btn a{
-    color: $white-colour;
+    color: $white-color;
     text-decoration: none;
   }
   .sign-in-form{
-    border-right: 1px solid $white-colour;
+    border-right: 1px solid $white-color;
     padding-bottom: 3%;
   }
   .sign-up-prompt {
@@ -249,16 +248,16 @@ footer {
   }
 }
 ::-webkit-input-placeholder {
-  color: $white-colour;
+  color: $white-color;
 }
 :-moz-placeholder {
-  color: $white-colour;
+  color: $white-color;
 }
 ::-moz-placeholder {
-  color: $white-colour;
+  color: $white-color;
 }
 :-ms-input-placeholder {
-  color: $white-colour;
+  color: $white-color;
 }
 textarea:focus, input:focus {
   outline: none;
