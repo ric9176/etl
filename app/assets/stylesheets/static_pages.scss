@@ -81,21 +81,24 @@ footer .glyphicon:hover {
   -o-background-size: cover;
   background-size: cover;
 }
-.services h1, h2 {
+.services {
+  padding-top: 5%;
   text-align: center;
+}
+.service-caption{
+  padding-bottom: 5%;
 }
 .glyphicon {
   font-size: 8em;
-  height: 140px;
-  line-height: 140px;
-  text-align: center;
-  vertical-align: middle;
-  width: 140px;
-  color: white;
-  border: 0px;
+  padding-bottom: 3%;
 }
 .glyph-row {
-  text-align: center;  
+  text-align: center;
+  padding-bottom: 4%;
+}
+.glyph-caption{
+  display: block;
+  font-size: 1.3em;
 }
 .btn-custom {
   color: #bdc3c7;
