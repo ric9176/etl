@@ -1,5 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
+$white-colour: #FFFFFF;
+$grey-colour: #BDC3C7;
+
 .navbar-header img {
     max-height: 100%;
     width: auto;
@@ -30,7 +33,7 @@
   padding-bottom: 20px;
 }
 .welcome {
-  color: white;
+  color: $white-colour;
   background: url('coffeeShop2_blur(15).jpeg') no-repeat center center fixed;
   display: table;
   height: 100%;
@@ -68,7 +71,7 @@
   text-align: center;
 }
 .services {
-  color: white;
+  color: $white-colour;
   background: url('services_bg.jpg') no-repeat center center fixed;
   display: table;
   height: 100%;
@@ -81,7 +84,7 @@
   -o-background-size: cover;
   background-size: cover;
   .glyph-caption {
-    color: white;
+    color: $white-colour;
     padding-bottom: 5%;
   }
   .service-caption{
@@ -101,13 +104,13 @@
   }
 }
 .btn-custom {
-  color: #bdc3c7;
+  color: $grey-colour;
   font-size: 18px;
-  border: 1px solid #bdc3c7;
+  border: 1px solid $grey-colour;
 }
 .btn-custom:hover {
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  color: $white-colour;
+  border: 1px solid $white-colour;
 }
 .pricing-table {
   padding-top: 50px;
@@ -133,7 +136,7 @@
   border-top-left-radius: 4px;
 }
 .pricing-table .pricing .pricing-table .pricing-header .pricing-title {
-  color: #ffffff;
+  color: $white-colour;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 24px;
@@ -143,7 +146,7 @@
 .pricing-table .pricing .pricing-table .pricing-header .pricing-rate {
   font-size: 70px;
   font-weight: 700;
-  color: #ffffff;
+  color: $white-colour;
   position: relative;
   text-align: center;
 }
@@ -151,16 +154,16 @@
   font-size: 24px;
   position: relative;
   top: -30px;
-  color: #bdc3c7;
+  color: $grey-colour;
 }
 .pricing-table .pricing .pricing-table .pricing-header .pricing-rate span {
   font-size: 16px;
-  color: #bdc3c7;
+  color: $grey-colour;
   text-transform: uppercase;
 }
 .pricing-table .pricing .pricing-list {
   padding: 20px 0 40px 0;
-  background: #ffffff;
+  background: $white-colour;
   border: 1px solid #e3e3e3;
 }
 .pricing-table .pricing .pricing-list ul {
@@ -171,7 +174,7 @@
 .pricing-table .pricing .pricing-list ul li {
   list-style: none;
   border-bottom: 1px solid #EAECEB;
-  color: #bdc3c7;
+  color: $grey-colour;
   font-size: 16px;
   line-height: 42px;
 }
@@ -180,7 +183,7 @@
 }
 .pricing-table .pricing .pricing-list ul li i {
   margin-right: 12px;
-  color: #bdc3c7;
+  color: $grey-colour;
 }
 .pricing-table .pricing .pricing-list ul li span {
   color: #34495e;
@@ -201,51 +204,61 @@ footer {
   color: #5e5e5e;
   padding: 20px 5px;
 }
-.modal-header{
-  border: 0px;
-  padding: 0;
-}
-.modal-header h4{
-  padding-top: 5%;
-  text-wrap: none;
-}
-.modal-content{
+.modal-content {
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url('modal-bg.jpg') no-repeat center center;
-  color: white;
+  color: $white-colour;
   border: 0px;
   padding-left: 5%;
-}
-.login-button{
-  margin-top: 10px;
-  display: block;
-  margin-bottom: 10px;
-}
-.login-button{
-  margin-top: 10px;
-  display: block;
-}
-.register-btn a{
-  color: white;
-  text-decoration: none;
-}
-.sign-in-form{
-  border-right: 1px solid white;
-}
-.textfield{
-  width: 90%;
-  background: rgba(255, 255, 255, 0.4);
+  & .modal-header {
+    border: 0px;
+    padding: 0;
+  }
+  .modal-header h4{
+    padding-top: 5%;
+    text-wrap: none;
+  }
+  .login-button{
+    margin-top: 10px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .login-button{
+    margin-top: 10px;
+    display: block;
+  }
+  .register-btn a{
+    color: $white-colour;
+    text-decoration: none;
+  }
+  .sign-in-form{
+    border-right: 1px solid $white-colour;
+    padding-bottom: 3%;
+  }
+  .sign-up-prompt {
+    padding-bottom: 3%;
+  }
+  .textfield{
+    width: 90%;
+    background: rgba(255, 255, 255, 0.4);
+  }
+  @media(max-width: 991px) {
+    .sign-in-form{
+      border-right: none;
+      padding-right: 250px;
+    }
+  }
 }
 ::-webkit-input-placeholder {
-  color: #FFFFFF;
+  color: $white-colour;
 }
 :-moz-placeholder {
-  color: #FFFFFF;
+  color: $white-colour;
 }
 ::-moz-placeholder {
-  color: #FFFFFF;
+  color: $white-colour;
 }
 :-ms-input-placeholder {
-  color: #FFFFFF;
+  color: $white-colour;
 }
 textarea:focus, input:focus {
   outline: none;
