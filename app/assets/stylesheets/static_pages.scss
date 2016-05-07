@@ -1,5 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
+.navbar-header img {
+    max-height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+.navbar-brand {
+  padding: 2px 2px;
+  padding-left: 15px;
+}
+
 .pad-section.landing-page {
   padding: 50px 0;
 }
@@ -55,19 +66,6 @@
 }
 .why-us h1 {
   text-align: center;
-}
-footer {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
-  color: #5e5e5e;
-  padding: 20px 5px;
-}
-footer .glyphicon {
-  color: #333333;
-  font-size: 60px;
-}
-footer .glyphicon:hover {
-  color: #306d9f;
 }
 .services {
   color: white;
@@ -183,15 +181,9 @@ footer .glyphicon:hover {
 #pricing-table .pricing .pricing-list ul li span {
   color: #34495e;
 }
-
-.navbar-header img {
-    max-height: 100%;
-    width: auto;
-    margin: 0;
-    padding: 0;
-}
-
-.navbar-brand {
-  padding: 2px 2px;
-  padding-left: 15px;
+footer {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  color: #5e5e5e;
+  padding: 20px 5px;
 }

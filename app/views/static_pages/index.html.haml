@@ -147,15 +147,4 @@
       .col-md-4.icon
         %span.glyphicon.glyphicon-blackboard
         %a.glyph-caption{:href => "#exam-prep-serv"}Presentation Preparation
-%section#contact
-  %footer
-    .container
-    %article
-    %p.text-left
-      EnglishTutorsLive
-    %p
-      info@englishtutorslive.com
-  .container
-    - flash.each do |name, msg|
-      = content_tag(:div, msg, class: "alert alert-info")
-    %end
+=render "layouts/footer"
