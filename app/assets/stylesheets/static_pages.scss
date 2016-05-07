@@ -233,4 +233,24 @@ footer {
 }
 .textfield{
   width: 90%;
+  background: rgba(255, 255, 255, 0.2);
+}
+a {
+  color: #92BCF2;
+  font-weight: 700;
+}
+::-webkit-input-placeholder {
+  color: #FFFFFF;
+}
+:-moz-placeholder {
+  color: #FFFFFF;
+}
+::-moz-placeholder {
+  color: #FFFFFF;
+}
+:-ms-input-placeholder {
+  color: #FFFFFF;
+}
+textarea:focus, input:focus {
+  outline: none;
 }
