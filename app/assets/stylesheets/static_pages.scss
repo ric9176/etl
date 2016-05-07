@@ -109,20 +109,22 @@
   color: #ffffff;
   border: 1px solid #ffffff;
 }
-#pricing-table {
+.pricing-table {
   padding-top: 50px;
   background: url('pricing-bg.jpg') fixed;
+  height: 100%;
+  width: 100%;
 }
-#pricing-table .pricing {
+.pricing-table .pricing {
   margin: 0;
   padding: 0;
   font-family: 'Robot', sans-serif;
 }
-#pricing-table .pricing .pricing-table {
+.pricing-table .pricing .pricing-table {
   padding-bottom: 30px;
   opacity: 0;
 }
-#pricing-table .pricing .pricing-table .pricing-header {
+.pricing-table .pricing .pricing-table .pricing-header {
   position: relative;
   background: #34495e;
   padding: 22px 22px;
@@ -130,7 +132,7 @@
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
-#pricing-table .pricing .pricing-table .pricing-header .pricing-title {
+.pricing-table .pricing .pricing-table .pricing-header .pricing-title {
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -138,49 +140,49 @@
   text-align: center;
   font-weight: 700;
 }
-#pricing-table .pricing .pricing-table .pricing-header .pricing-rate {
+.pricing-table .pricing .pricing-table .pricing-header .pricing-rate {
   font-size: 70px;
   font-weight: 700;
   color: #ffffff;
   position: relative;
   text-align: center;
 }
-#pricing-table .pricing .pricing-table .pricing-header .pricing-rate sup {
+.pricing-table .pricing .pricing-table .pricing-header .pricing-rate sup {
   font-size: 24px;
   position: relative;
   top: -30px;
   color: #bdc3c7;
 }
-#pricing-table .pricing .pricing-table .pricing-header .pricing-rate span {
+.pricing-table .pricing .pricing-table .pricing-header .pricing-rate span {
   font-size: 16px;
   color: #bdc3c7;
   text-transform: uppercase;
 }
-#pricing-table .pricing .pricing-list {
+.pricing-table .pricing .pricing-list {
   padding: 20px 0 40px 0;
   background: #ffffff;
   border: 1px solid #e3e3e3;
 }
-#pricing-table .pricing .pricing-list ul {
+.pricing-table .pricing .pricing-list ul {
   padding: 0px;
   display: table;
   margin: 0px auto;
 }
-#pricing-table .pricing .pricing-list ul li {
+.pricing-table .pricing .pricing-list ul li {
   list-style: none;
   border-bottom: 1px solid #EAECEB;
   color: #bdc3c7;
   font-size: 16px;
   line-height: 42px;
 }
-#pricing-table .pricing .pricing-list ul li:last-child {
+.pricing-table .pricing .pricing-list ul li:last-child {
   border: none;
 }
-#pricing-table .pricing .pricing-list ul li i {
+.pricing-table .pricing .pricing-list ul li i {
   margin-right: 12px;
   color: #bdc3c7;
 }
-#pricing-table .pricing .pricing-list ul li span {
+.pricing-table .pricing .pricing-list ul li span {
   color: #34495e;
 }
 footer {
