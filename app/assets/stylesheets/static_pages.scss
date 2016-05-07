@@ -194,6 +194,7 @@
 .navbar-brand {
   padding: 2px 2px;
   padding-left: 15px;
+}
 footer {
   background-color: #f8f8f8;
   border-color: #e7e7e7;
@@ -223,17 +224,13 @@ footer {
   margin-top: 10px;
   display: block;
 }
-.register-btn a {
+.register-btn a{
   color: white;
   text-decoration: none;
 }
 .sign-in-form{
   border-right: 1px solid white;
 }
-#student_email{
-  background-color: rgba(244, 0, 0, 1.4);
-}
 .textfield{
-    width: 90%;
-    background-color: rgba(244, 0, 0, 1.4);
+  width: 90%;
 }
