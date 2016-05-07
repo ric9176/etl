@@ -200,15 +200,4 @@
       We are online translators who are happy to work with you or independently to translate texts on a wide range of subjects. Although we translate into English primarily from Spanish, send us an inquiry about a text you’d like translated from another language and we will try to meet your needs. We also provide translations into Spanish, upon request. English Tutors Live prides itself on providing hassle and error free translations by skilled translators.
     %h5
       **Translation services are priced separately from classes, at €25 for the first page, and €0.08 per word thereafter.
-%section#contact
-  %footer
-    .container
-    %article
-    %p.text-left
-      EnglishTutorsLive
-    %p
-      info@englishtutorslive.com
-  .container
-    - flash.each do |name, msg|
-      = content_tag(:div, msg, class: "alert alert-info")
-    %end
+=render "layouts/footer"
