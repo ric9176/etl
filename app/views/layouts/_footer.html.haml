@@ -1,9 +1,12 @@
-%footer
-  %article.contact
-    %p.text-left
-      EnglishTutorsLive
-    %p
-      info@englishtutorslive.com
-    %ul.nav.navbar-nav.navbar-right.teacher-sign-in
-      %li
-        = link_to 'Teacher Sign In', new_teacher_session_path
+%footer.container
+  .row
+    .col-md-4
+      %p EnglishTutorsLive
+    .col-md-4
+      %p info@englishtutorslive.com
+    .col-md-4
+      = link_to 'Teacher Sign In', new_teacher_session_path
+      .container
+      - flash.each do |name, msg|
+        = content_tag(:div, msg, class: "alert alert-info")
+      %end
