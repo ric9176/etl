@@ -1,4 +1,4 @@
-<%- if controller_name != 'sessions' %>
+<%- if controller_name != 'sessions' && resource_name != :student %>
   <%= link_to "Log in", new_session_path(resource_name) %><br />
 <% end -%>
 

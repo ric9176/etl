@@ -29,9 +29,9 @@
             = link_to "Log out", destroy_teacher_session_path(protocol: "https"), method: :delete
         - else
           %li
-            = link_to 'Student Sign In', new_student_session_path, :remote => true, 'data-toggle' => "modal", 'data-target' => "#myModal", :method => 'get'
+            = link_to 'Student Sign In', new_student_session_path(:user_type => 'student'), :remote => true, 'data-toggle' => "modal", 'data-target' => "#myModal", :method => 'get'
           %li
-            = link_to 'Teacher Sign In', new_teacher_session_path, :remote => true, 'data-toggle' => "modal", 'data-target' => "#myModal", :method => 'get'
+            = link_to 'Teacher Sign In', new_teacher_session_path(:user_type => 'teacher'), :remote => true, 'data-toggle' => "modal", 'data-target' => "#myModal", :method => 'get'
 
 .modal.fade#myModal{:role => 'dialog'}
   .modal-dialog
