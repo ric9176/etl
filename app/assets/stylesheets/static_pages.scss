@@ -48,28 +48,25 @@ $grey-color: #BDC3C7;
   background-size: cover;
 }
 .about-etl {
-  display: table;
-  height: 60%;
-  width: 100%;
+
 }
 .carousel-caption {
     top: 20px;
     bottom: auto;
 }
 .carousel-inner{
-  max-height: 400px;
   background: url('background-gradient-2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-  vertical-align: middle;
-  h3 {
-    padding-bottom: 3%;
-  }
+}
+h3 {
+  padding-bottom: 3%;
 }
 .why-us {
+  height: 60%;
   color: black;
   display: table;
   height: 100%;

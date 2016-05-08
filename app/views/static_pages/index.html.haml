@@ -2,13 +2,13 @@
   .text-vcenter
     %h1
       Learn english- no matter where you are
-    %a.btn.btn-default.btn-lg{:href => "#about-etl"}
+    %a.btn.btn-default.btn-lg{:href => "#why-us"}
       Why us?
 
 
--# Carousel
-%section.about-etl#about-etl
-  #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+
+.carousel.slide{"data-ride" => "carousel"}
+  %section.why-us#why-us
     / Indicators
     %ol.carousel-indicators
       %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
@@ -49,7 +49,7 @@
               %h3
                 Yes! You can now learn English online with Skype English classes, enjoy high quality engaging lessons given by our trusted native English teachers - no matter where in the world you are.
               %iframe{:width => "800", :height => "480", :src => "https://www.youtube.com/v/Ck6jrLZUmyE&feature=youtu.be"}
-%section.why-us#why-us
+%section
   .pad-section.landing-page
     .container
       .row
