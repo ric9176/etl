@@ -2,7 +2,19 @@
 
 $white-color: #FFFFFF;
 $grey-color: #BDC3C7;
+$blue-gradient: rgba(63, 76, 107, 0.7);
+$green-gradient: rgba(0, 76, 0, 0.7);
 
+.section-container {
+  display: table;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 .navbar-header img {
     max-height: 100%;
     width: auto;
@@ -13,14 +25,16 @@ $grey-color: #BDC3C7;
   padding: 2px 2px;
   padding-left: 15px;
 }
-.pad-section.landing-page {
-  padding: 50px 0;
-}
-.pad-section.landing-page img {
-  width: 100%;
+.pad-section {
+  &.landing-page {
+    padding: 50px 0;
+    img {
+      width: 100%;
+    }
+  }
 }
 .alert-msg {
-  width: 50%
+  width: 50%;
 }
 .text-vcenter {
   display: table-cell;
@@ -40,21 +54,14 @@ $grey-color: #BDC3C7;
 .welcome {
   color: $white-color;
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%), url('people_sitting.jpg') no-repeat center center fixed;
-  display: table;
-  height: 100%;
-  position: relative;
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  @extend .section-container;
 }
 .jumbotron{
   text-align: center;
   margin: 0;
 }
 .my-carousel {
-	background: linear-gradient(rgba(0, 76, 0, 0.7), rgba(63, 76, 107, 0.7)), url("about-etl-bg.jpg");
+	background: linear-gradient($green-gradient, $blue-gradient), url("about-etl-bg.jpg");
 	background-size: cover;
 	min-height: 100%;
   color: white;
@@ -67,17 +74,10 @@ $grey-color: #BDC3C7;
 }
 .services {
   color: $white-color;
-  background: linear-gradient(rgba(63, 76, 107, 0.4), rgba(63, 76, 107, 0.7)), url("coffeeShop2_blur(15).jpg") no-repeat center center fixed;
-  display: table;
-  height: 100%;
-  position: relative;
-  width: 100%;
+  background: linear-gradient(rgba(63, 76, 107, 0.4), $blue-gradient), url("coffeeShop2_blur(15).jpg") no-repeat center center fixed;
   padding-top: 5%;
   text-align: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  @extend .section-container;
   .glyph-caption {
     color: $white-color;
     padding-bottom: 5%;
@@ -107,16 +107,16 @@ $grey-color: #BDC3C7;
   color: $white-color;
   border: 1px solid $white-color;
 }
-.pricing-table {
-  padding-top: 50px;
-  background: linear-gradient(rgba(63, 76, 107, 0.7), rgba(0, 76, 0, 0.7)), url('computer_glasses.jpeg') no-repeat center center fixed;
-  height: 100%;
-  width: 100%;
-}
-.pricing-table .pricing {
+.pricing {
   margin: 0;
   padding: 0;
   font-family: 'Robot', sans-serif;
+  .pricing-table {
+    padding-top: 50px;
+    background: linear-gradient($blue-gradient, $green-gradient), url('computer_glasses.jpeg') no-repeat center center fixed;
+    height: 100%;
+    width: 100%;
+  }
 }
 .pricing-table .pricing .pricing-table {
   padding-bottom: 30px;
@@ -124,7 +124,7 @@ $grey-color: #BDC3C7;
 }
 .pricing-table .pricing .pricing-table .pricing-header {
   position: relative;
-  background: #34495e;
+  background: #34495E;
   padding: 22px 22px;
   text-align: center;
   border-top-right-radius: 4px;
@@ -144,44 +144,44 @@ $grey-color: #BDC3C7;
   color: $white-color;
   position: relative;
   text-align: center;
-}
-.pricing-table .pricing .pricing-table .pricing-header .pricing-rate sup {
-  font-size: 24px;
-  position: relative;
-  top: -30px;
-  color: $grey-color;
-}
-.pricing-table .pricing .pricing-table .pricing-header .pricing-rate span {
-  font-size: 16px;
-  color: $grey-color;
-  text-transform: uppercase;
+  sup {
+    font-size: 24px;
+    position: relative;
+    top: -30px;
+    color: $grey-color;
+  }
+  span {
+    font-size: 16px;
+    color: $grey-color;
+    text-transform: uppercase;
+  }
 }
 .pricing-table .pricing .pricing-list {
   padding: 20px 0 40px 0;
   background: $white-color;
-  border: 1px solid #e3e3e3;
-}
-.pricing-table .pricing .pricing-list ul {
-  padding: 0px;
-  display: table;
-  margin: 0px auto;
-}
-.pricing-table .pricing .pricing-list ul li {
-  list-style: none;
-  border-bottom: 1px solid #EAECEB;
-  color: $grey-color;
-  font-size: 16px;
-  line-height: 42px;
+  border: 1px solid #E3E3E3;
+  ul {
+    padding: 0px;
+    display: table;
+    margin: 0px auto;
+    li {
+      list-style: none;
+      border-bottom: 1px solid #EAECEB;
+      color: $grey-color;
+      font-size: 16px;
+      line-height: 42px;
+      i {
+        margin-right: 12px;
+        color: $grey-color;
+      }
+      span {
+        color: #34495e;
+      }
+    }
+  }
 }
 .pricing-table .pricing .pricing-list ul li:last-child {
   border: none;
-}
-.pricing-table .pricing .pricing-list ul li i {
-  margin-right: 12px;
-  color: $grey-color;
-}
-.pricing-table .pricing .pricing-list ul li span {
-  color: #34495e;
 }
 .navbar-header img {
     max-height: 100%;
@@ -193,18 +193,12 @@ $grey-color: #BDC3C7;
   padding: 2px 2px;
   padding-left: 15px;
 }
-footer {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
-  color: #5e5e5e;
-  padding: 20px 5px;
-}
 .modal-content {
   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url('books_window.jpg') no-repeat center center;
   color: $white-color;
   border: 0px;
   padding-left: 5%;
-  & .modal-header {
+  &.modal-header {
     border: 0px;
     padding: 0;
     h4{
@@ -238,6 +232,12 @@ footer {
       padding-right: 250px;
     }
   }
+}
+footer {
+  background-color: #f8f8f8;
+  border-color: #e7e7e7;
+  color: #5e5e5e;
+  padding: 20px 5px;
 }
 ::-webkit-input-placeholder {
   color: $white-color;
