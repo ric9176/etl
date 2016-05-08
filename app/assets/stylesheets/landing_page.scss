@@ -56,16 +56,14 @@ $grey-color: #BDC3C7;
 	background-size: cover;
 	min-height: 100%;
   color: white;
-}
-.logo{
-  padding-top: 50px;
-}
+  .logo{
+    padding-top: 50px;
+  }
 
-.item{
-  padding-top: 50px;
+  .item{
+    padding-top: 50px;
+  }
 }
-
-
 .services {
   color: $white-color;
   background: url('services_bg.jpg') no-repeat center center fixed;
