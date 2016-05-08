@@ -9,9 +9,9 @@
         .item.active
           %h1 Enjoy high quality lessons
         .item
-          %h1 On your time
+          %h1 on your terms
         .item
-          %h1 Wherever you are
+          %h1 wherever you are
   %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
     %span.icon-prev
   %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
@@ -57,7 +57,7 @@
       .row
         .pricing
           .col-md-4.col-sm-12.col-xs-12
-            .pricing-table.table_one
+            .pricing-table
               .pricing-header
                 %p.pricing-title Conversation Class
                 %p.pricing-rate
@@ -69,13 +69,17 @@
                 %ul
                   %li
                     %i.fa.fa-envelope>
-                    Conversation refinement
+                    Conversation practice
                   %li
                     %i.fa.fa-signal
                     %span
-                    Error correction
+                    Real time error correction
+                  %li
+                    %i.fa.fa-signal
+                    %span
+                    Real time materials
           .col-md-4.col-sm-12.col-xs-12
-            .pricing-table.table_two
+            .pricing-table
               .pricing-header
                 %p.pricing-title Premium Class
                 %p.pricing-rate
@@ -87,20 +91,18 @@
                 %ul
                   %li
                     %i.fa.fa-envelope>
-                    10,000 messages
+                    Advanced memory techniques
                   %li
                     %i.fa.fa-signal
-                    %span unlimited
-                    data
+                    %span
+                    Exam preparation
                   %li
-                    %i.fa.fa-user
-                    %span unlimited
-                    users
-                  %li
-                    %i.fa.fa-smile-o>
-                    first 10 day free
+                    %i.fa.fa-signal
+                    %span
+                    Pronunciation practise
+
           .col-md-4.col-sm-12.col-xs-12
-            .pricing-table.table_three
+            .pricing-table
               .pricing-header
                 %p.pricing-title Specialist Class
                 %p.pricing-rate
@@ -112,17 +114,14 @@
                 %ul
                   %li
                     %i.fa.fa-envelope>
-                    10,0000 messages
+                    Expert teacher in field
                   %li
                     %i.fa.fa-signal
-                    %span unlimited
-                    data
+                    %span
+                    Interview coaching
                   %li
-                    %i.fa.fa-user
-                    %span unlimited
-                    users
-                  %li
-                    %i.fa.fa-smile-o>
-                    first 10 day free
+                    %i.fa.fa-signal
+                    %span
+                    Post-class error correction
 
 =render "layouts/footer"
