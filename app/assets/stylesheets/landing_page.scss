@@ -51,8 +51,7 @@ $grey-color: #BDC3C7;
   text-align: center;
   margin: 0;
 }
-
-#myCarousel {
+.my-carousel {
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .9)), url("about-etl-bg.jpg");
 	background-size: cover;
 	min-height: 100%;
