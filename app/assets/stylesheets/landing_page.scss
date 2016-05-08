@@ -198,10 +198,10 @@ $green-gradient: rgba(0, 76, 0, 0.7);
   color: $white-color;
   border: 0px;
   padding-left: 5%;
-  &.modal-header {
+  .modal-header {
     border: 0px;
     padding: 0;
-    h4{
+    h4 {
       padding-top: 5%;
       text-wrap: none;
     }
