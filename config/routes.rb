@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :update, :destroy]
 
 
-  root to: "static_pages#index"
+  root to: "landing_page#index"
 
   get "dashboard" => "dashboard#index"
 
