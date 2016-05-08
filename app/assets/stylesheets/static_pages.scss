@@ -47,6 +47,7 @@ $grey-color: #BDC3C7;
   -o-background-size: cover;
   background-size: cover;
 }
+<<<<<<< HEAD
 .about-etl {
   display: table;
   height: 100%;
@@ -61,21 +62,29 @@ $grey-color: #BDC3C7;
   h3 {
     padding-bottom: 5%;
   }
+=======
+
+.jumbotron{
+  text-align: center;
+  margin: 0;
+>>>>>>> 14df22a3d14582ed8d2125a37a9e518785054503
 }
-.why-us {
-  color: black;
-  display: table;
-  height: 100%;
-  position: relative;
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  h1 {
-    text-align: center;
-  }
+
+#myCarousel {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .9)), url("about-etl-bg.jpg");
+	background-size: cover;
+	min-height: 100%;
+  color: white;
 }
+.logo{
+  padding-top: 50px;
+}
+
+.item{
+  padding-top: 50px;
+}
+
+
 .services {
   color: $white-color;
   background: url('services_bg.jpg') no-repeat center center fixed;
@@ -264,4 +273,72 @@ footer {
 }
 textarea:focus, input:focus {
   outline: none;
+}
+
+// CLOCK
+
+
+.clock {
+    width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    color: #fff;
+}
+
+.time {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+.time li {
+    display: inline;
+    font-size: 7em;
+    text-align: center;
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 5px #00c6ff;
+}
+
+#point {
+    position: relative;
+    -moz-animation: mymove 1s ease infinite;
+    -webkit-animation: mymove 1s ease infinite;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Simple Animation */
+@-webkit-keyframes mymove {
+    0% {opacity: 1.0;
+    text-shadow: 0 0 20px #00c6ff;
+}
+
+50% {
+    opacity: 0;
+    text-shadow: none;
+}
+
+100% {
+    opacity: 1.0;
+    text-shadow: 0 0 20px #00c6ff;
+}
+}
+
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    };
 }

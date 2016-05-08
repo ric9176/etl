@@ -1,21 +1,24 @@
-%section.welcome#welcome
-  .text-vcenter
-    %h1
-      Learn english- no matter where you are
-    %a.btn.btn-default.btn-lg{:href => "#about-etl"}
-      Continue
-%section.about-etl#about-etl
-  .text-vcenter
-    .pad-section.landing-page
-      .container
-        .row
-          .col-sm-12
-            %article
-              %div#earth
-              %h3
-                Yes! You can now learn English online with Skype English classes, enjoy high quality engaging lessons given by our trusted native English teachers - no matter where in the world you are.
-              %iframe{:width => "800", :height => "480", :src => "https://www.youtube.com/v/Ck6jrLZUmyE&feature=youtu.be"}
-%section.why-us#why-us
+#myCarousel.carousel.slide.jumbotron
+  .container
+    %ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+    %img.logo{:src => 'etl-logo.png', :width => '40%'}
+      .carousel-inner
+        .item.active
+          %h1 Enjoy high quality lessons
+        .item
+          %h1 On your time
+        .item
+          %h1 Wherever you are
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+    %span.icon-prev
+  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+    %span.icon-next
+
+
+%section
   .pad-section.landing-page
     .container
       .row
@@ -57,7 +60,7 @@
                   %sup  ‎ ‎€
                   9
                   %span /25 mins
-                %a.btn.btn-custom{:href => "#"} And Get Free Month
+                %a.btn.btn-custom{:href => "#"} Sign up now!
               .pricing-list
                 %ul
                   %li
@@ -82,7 +85,7 @@
                   %sup ‎€
                   11
                   %span /25 mins
-                %a.btn.btn-custom{:href => "#"} And Get Free Month
+                %a.btn.btn-custom{:href => "#"} Sign up now!
               .pricing-list
                 %ul
                   %li
@@ -107,7 +110,7 @@
                   %sup ‎€
                   13
                   %span /25 mins
-                %a.btn.btn-custom{:href => "#"} And Get Free Month
+                %a.btn.btn-custom{:href => "#"} Sign up now!
               .pricing-list
                 %ul
                   %li
