@@ -52,12 +52,16 @@ $grey-color: #BDC3C7;
   height: 100%;
   position: relative;
   width: 100%;
+  background: url('background-gradient-2.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
   vertical-align: middle;
+  h3 {
+    padding-bottom: 3%;
+  }
 }
 .why-us {
   color: black;
@@ -117,7 +121,7 @@ $grey-color: #BDC3C7;
 }
 .pricing-table {
   padding-top: 50px;
-  background: url('pricing-bg.jpg') fixed;
+  background: url('stones.jpeg') fixed;
   height: 100%;
   width: 100%;
 }
