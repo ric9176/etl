@@ -1,6 +1,10 @@
 %nav.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
   .container-fluid
     .navbar-header
+      .container.alert-msg
+      - flash.each do |name, msg|
+        = content_tag(:div, msg, class: "alert alert-info")
+      %end
       %button.navbar-toggle{"data-target" => "#navbar-collapse-main", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only
           Toggle navigation
