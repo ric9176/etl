@@ -54,7 +54,7 @@ $grey-color: #BDC3C7;
   margin: 0;
 }
 .my-carousel {
-	background: linear-gradient(rgba(0,76, 0,0.7), rgba(63,76,107,0.7)), url("about-etl-bg.jpg");
+	background: linear-gradient(rgba(0, 76, 0, 0.7), rgba(63, 76, 107, 0.7)), url("about-etl-bg.jpg");
 	background-size: cover;
 	min-height: 100%;
   color: white;
@@ -67,7 +67,7 @@ $grey-color: #BDC3C7;
 }
 .services {
   color: $white-color;
-  background: url('services_bg.jpg') no-repeat center center fixed;
+  background: linear-gradient(rgba(63, 76, 107, 0.4), rgba(63, 76, 107, 0.7)), url("coffeeShop2_blur(15).jpg") no-repeat center center fixed;
   display: table;
   height: 100%;
   position: relative;
@@ -109,7 +109,7 @@ $grey-color: #BDC3C7;
 }
 .pricing-table {
   padding-top: 50px;
-  background: url('stones.jpeg') fixed;
+  background: linear-gradient(rgba(63, 76, 107, 0.7), rgba(0, 76, 0, 0.7)), url('computer_glasses.jpeg') no-repeat center center fixed;
   height: 100%;
   width: 100%;
 }
