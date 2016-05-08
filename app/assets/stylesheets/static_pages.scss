@@ -46,15 +46,15 @@ $grey-colour: #BDC3C7;
 }
 .about-etl {
   display: table;
-  height: 100%;
-  position: relative;
+  height: 60%;
   width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  text-align: center;
-  vertical-align: middle;
+}
+.carousel-caption {
+    top: 20px;
+    bottom: auto;
+}
+.carousel-inner{
+  max-height: 400px;
 }
 .why-us {
   color: black;
@@ -262,4 +262,72 @@ footer {
 }
 textarea:focus, input:focus {
   outline: none;
+}
+
+// CLOCK
+
+
+.clock {
+    width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    color: #fff;
+}
+
+.time {
+    width: 75%;
+    margin: 0 auto;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+.time li {
+    display: inline;
+    font-size: 7em;
+    text-align: center;
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 5px #00c6ff;
+}
+
+#point {
+    position: relative;
+    -moz-animation: mymove 1s ease infinite;
+    -webkit-animation: mymove 1s ease infinite;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Simple Animation */
+@-webkit-keyframes mymove {
+    0% {opacity: 1.0;
+    text-shadow: 0 0 20px #00c6ff;
+}
+
+50% {
+    opacity: 0;
+    text-shadow: none;
+}
+
+100% {
+    opacity: 1.0;
+    text-shadow: 0 0 20px #00c6ff;
+}
+}
+
+@-moz-keyframes mymove {
+    0% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 20px #00c6ff;
+    };
 }
