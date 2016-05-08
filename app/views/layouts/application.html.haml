@@ -6,7 +6,8 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    = link_to "Log out", destroy_teacher_session_path(protocol: "https"), method: :delete
+    .log-out
+      = link_to "Log out", destroy_teacher_session_path(protocol: "https"), method: :delete
 
   -unless current_student || current_teacher
     =render "layouts/header"
