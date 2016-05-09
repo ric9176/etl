@@ -1,4 +1,7 @@
-%h1 My Profile
-- if teacher_signed_in?
-  = link_to 'Back', teacher_profile_path(:id => current_teacher.id)
-  = render 'form'
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      %h1 My Profile
+      - if teacher_signed_in?
+        = link_to 'Back', teacher_profile_path(:id => current_teacher.id)
+        = render 'form'

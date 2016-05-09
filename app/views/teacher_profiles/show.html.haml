@@ -1,21 +1,17 @@
-= @teacher.email
-'s profile
 - if @teacher.teacher_profile == nil
-  %h1 You do not have a profile yet
-  = link_to 'Create Profile', new_teacher_profile_path
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %h1 You do not have a profile yet
+        %h4= link_to 'Create Profile', new_teacher_profile_path
+        %h4= link_to 'Back to Dashboard', dashboard_path
 - else
-  %br
-  = image_tag @teacher.teacher_profile.image.url(:medium)
-  %br
-  Name:
-  = @teacher.teacher_profile.name
-  %br
-  Bio:
-  = @teacher.teacher_profile.bio
-  %br
-  Skype username:
-  = @teacher.teacher_profile.skype_username
-  %br
-  = link_to 'Edit profile', edit_teacher_profile_path(@teacher.teacher_profile.id)
-  %br
-  = link_to 'Back to Dashboard', dashboard_path
+  .container.profile
+    .row
+      .col-md-6.col-md-offset-1
+        = image_tag @teacher.teacher_profile.image.url(:medium)
+        %h4 Name: #{@teacher.teacher_profile.name}
+        %h4 Bio: #{@teacher.teacher_profile.bio}
+        %h4 Skype username: #{@teacher.teacher_profile.skype_username}
+        %h5= link_to 'Edit profile', edit_teacher_profile_path(@teacher.teacher_profile.id)
+        %h5= link_to 'Back to Dashboard', dashboard_path

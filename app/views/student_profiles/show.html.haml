@@ -1,23 +1,19 @@
-= @student.email
-'s profile
 - if @student.student_profile == nil
-  %h1 You do not have a profile yet
-  = link_to 'Create Profile', new_student_profile_path
+  .container
+    .row
+      .col-md-6.col-md-offset-3
+        %h1 You do not have a profile yet
+        %h4= link_to 'Create Profile', new_student_profile_path
+        %h4= link_to 'Back to Dashboard', dashboard_path
 - else
-  %br
-  Name:
-  = @student.student_profile.name
-  %br
-  Skype username:
-  = @student.student_profile.skype_username
-  %br
-  Native language:
-  = @student.student_profile.native_language
-  %br
-  Learning objectives:
-  = @student.student_profile.learning_objectives
-  %br
-  = link_to 'Edit profile', edit_student_profile_path(@student.student_profile.id)
-  - unless @student.has_a_teacher
-    %br
-    = link_to 'Find a teacher', teacher_profiles_path
+  .container.profile
+    .row
+      .col-md-6.col-md-offset-1
+        %h4 Name: #{@student.student_profile.name}
+        %h4 Skype username: #{@student.student_profile.skype_username}
+        %h4 Native language: #{@student.student_profile.native_language}
+        %h4 Learning objectives:#{@student.student_profile.learning_objectives}
+        %h5= link_to 'Edit profile', edit_student_profile_path(@student.student_profile.id)
+        - unless @student.has_a_teacher
+          %h5= link_to 'Find a teacher', teacher_profiles_path
+        %h5= link_to 'Back to Dashboard', dashboard_path

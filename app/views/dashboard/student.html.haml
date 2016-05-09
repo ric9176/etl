@@ -1,0 +1,23 @@
+.container
+  .row
+    .col-sm-6.col-sm-offset-1
+      %h3= "#{@student.email}'s dashboard"
+      %h3= link_to "My profile", student_profile_path(:id => @student.id)
+- if @student.has_a_teacher
+  Current teacher:
+  - @student.current_teachers.each do |relationship|
+    Name:
+    \#{@teachers.find(relationship.teacher_id).teacher_profile.name}
+    Skype username:
+    \#{@teachers.find(relationship.teacher_id).teacher_profile.skype_username}
+  %h3 Class materials:
+  - @student.class_materials.each do |material|
+    Date:
+    \#{material.date}
+    Link:
+    \#{material.link}
+- elsif @student.has_pending_teacher_requests
+  Pending requests:
+  - @student.pending_teacher_requests.each do |relationship|
+    = @teachers.find(relationship.teacher_id).teacher_profile.name
+    = link_to 'Undo request', relationship_path(relationship.id), method: :delete

@@ -1,14 +1,17 @@
-#teacher_profiles
-  %p#notice
-    = notice
-  %h1 Teachers
-  #teachers.transitions-enabled
-    - @teachers.each do |teacher|
-      .teacher_profile_box.panel.panel-default
-        - if teacher.teacher_profile
-          = image_tag teacher.teacher_profile.image.url(:medium)
-          = link_to "#{teacher.teacher_profile.name}", {controller: "relationships", action: "create", teacher_id: teacher.id}, method: :post
-          .panel-body
-          = teacher.teacher_profile.bio
-          - if teacher == current_teacher
-            = link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile)
+.container
+  .row
+    .col-md-10.col-md-offset-1
+      #teacher_profiles
+        %p#notice
+          = notice
+        %h1 Teachers
+        #teachers.transitions-enabled
+          - @teachers.each do |teacher|
+            .teacher_profile_box.panel.panel-default
+              - if teacher.teacher_profile
+                = image_tag teacher.teacher_profile.image.url(:medium)
+                = link_to "#{teacher.teacher_profile.name}", {controller: "relationships", action: "create", teacher_id: teacher.id}, method: :post
+                .panel-body
+                = teacher.teacher_profile.bio
+                - if teacher == current_teacher
+                  = link_to 'Edit My Profile', edit_teacher_profile_path(teacher.teacher_profile)

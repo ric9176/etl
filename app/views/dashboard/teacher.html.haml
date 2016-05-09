@@ -1,0 +1,19 @@
+.container
+  .row
+    .col-sm-6.col-sm-offset-1
+      %h3 #{@teacher.email}'s dashboard
+      %h3= link_to "My profile", teacher_profile_path(:id => @teacher.id)
+- @teacher.relationships.each do |relationship|
+  - if relationship.request_status == true
+    Current students:
+    Name: #{@students.find(relationship.student_id).student_profile.name}
+    Skype username: #{@students.find(relationship.student_id).student_profile.skype_username}
+    =link_to 'Add class', {controller: "class_materials", action: "new", student_id: relationship.student_id}
+    =link_to 'Classes', class_material_path(@students.find(relationship.student_id))
+  - else
+    Pending requests:
+    Name: #{@students.find(relationship.student_id).student_profile.name}
+    Native language: #{@students.find(relationship.student_id).student_profile.native_language}
+    Learning objectives: #{@students.find(relationship.student_id).student_profile.learning_objectives}
+    =link_to "Confirm", relationship_path(relationship.id), method: :put
+    =link_to "Decline", relationship_path(relationship.id), method: :delete

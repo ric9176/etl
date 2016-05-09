@@ -2,8 +2,9 @@
 
 $white-color: #FFFFFF;
 $grey-color: #BDC3C7;
-$blue-gradient: rgba(63, 76, 107, 0.7);
-$green-gradient: rgba(0, 76, 0, 0.7);
+$blue-gradient: rgba(75, 121, 161, 0.6);
+$green-gradient: rgba(40, 62, 81, 0.7);
+#4B79A1
 
 .section-container {
   display: table;
@@ -51,11 +52,6 @@ $green-gradient: rgba(0, 76, 0, 0.7);
     margin-bottom: 260px;
   }
 }
-.welcome {
-  color: $white-color;
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%), url('people_sitting.jpg') no-repeat center center fixed;
-  @extend .section-container;
-}
 .jumbotron{
   text-align: center;
   margin: 0;
@@ -73,8 +69,9 @@ $green-gradient: rgba(0, 76, 0, 0.7);
   }
 }
 .services {
+  margin-bottom: 50px;
   color: $white-color;
-  background: linear-gradient(rgba(63, 76, 107, 0.4), $blue-gradient), url("coffeeShop2_blur(15).jpg") no-repeat center center fixed;
+  background: url("coffeeShop2_blur(15).jpg") no-repeat center center fixed;
   padding-top: 5%;
   text-align: center;
   @extend .section-container;
@@ -113,7 +110,7 @@ $green-gradient: rgba(0, 76, 0, 0.7);
   font-family: 'Robot', sans-serif;
   .pricing-table {
     padding-top: 50px;
-    background: linear-gradient($blue-gradient, $green-gradient), url('computer_glasses.jpeg') no-repeat center center fixed;
+    background: url('pricing-bg.jpeg') no-repeat center center fixed;
     height: 100%;
     width: 100%;
   }
@@ -194,11 +191,11 @@ $green-gradient: rgba(0, 76, 0, 0.7);
   padding-left: 15px;
 }
 .modal-content {
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url('books_window.jpg') no-repeat center center;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%), url('services_bg.jpg') no-repeat center center;
   color: $white-color;
   border: 0px;
   padding-left: 5%;
-  &.modal-header {
+  .modal-header {
     border: 0px;
     padding: 0;
     h4{
