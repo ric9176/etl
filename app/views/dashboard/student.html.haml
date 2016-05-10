@@ -1,7 +1,11 @@
 .container
   .row
     .col-sm-6.col-sm-offset-1
-      %h3= "#{@student.email}'s dashboard"
+    -if @student.student_profile.name != nil
+      %h3= "#{@student.student_profile.name}' s Dashboard"
+    -else
+      %h3= "#{@student.email}'s Dashboard"
+    %end
       %h3= link_to "My profile", student_profile_path(:id => @student.id)
       - if @student.has_a_teacher
         %h3 Current teacher:
