@@ -17,3 +17,8 @@ Language learning is something that our team is very passionate about. Learning 
 - Create a booking system in which allows students to book lessons with their teachers based on teacher availability.
 - Implement Stripe in order for students to pay for their lessons through the site.
 - English is only the beginning. We fully intend on branching out into as many languages as we can.
+
+### Authors
+[Richard Moss]: https://github.com/ric9176
+[Charlie Person]: https://github.com/charlieperson
+[Dovile Sandaite]: https://github.com/DovileSand
