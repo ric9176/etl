@@ -19,6 +19,6 @@ Language learning is something that our team is very passionate about. Learning 
 - English is only the beginning. We fully intend on branching out into as many languages as we can.
 
 ### Authors
-[Richard Moss](https://github.com/ric9176)
-[Charlie Person](https://github.com/charlieperson)
-[Dovile Sandaite](https://github.com/DovileSand)
+[Richard Moss](https://github.com/ric9176)  
+[Charlie Person](https://github.com/charlieperson)  
+[Dovile Sandaite](https://github.com/DovileSand)  
