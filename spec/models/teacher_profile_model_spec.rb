@@ -1,10 +1,7 @@
 require 'rails_helper'
 
 describe TeacherProfile, type: :model do
-  it 'TeacherProfile class implemented' do
-    expect(class_exists?('TeacherProfile'))
-    expect(TeacherProfile < ActiveRecord::Base).to eq(true)
-  end
+  
   context 'TeacherProfile class properties defined' do
     subject(:teacher) { TeacherProfile.new }
     it { is_expected.to respond_to(:name) }

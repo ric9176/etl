@@ -1,6 +1,6 @@
 def student_sign_up(email='student@test.com', password='testtest', password_confirmation='testtest')
   visit '/'
-  click_link 'Student sign in'
+  click_link 'Student Sign In'
   click_link 'Sign up'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
@@ -10,7 +10,7 @@ end
 
 def teacher_sign_up(email='teacher@test.com', password='testtest', password_confirmation='testtest')
   visit '/'
-  click_link 'Teacher sign in'
+  click_link 'Teacher Sign In'
   click_link 'Sign up'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
@@ -20,7 +20,7 @@ end
 
 def teacher_sign_in(email='teacher@test.com', password='testtest')
   visit '/'
-  click_link 'Teacher sign in'
+  click_link 'Teacher Sign In'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
   click_button 'Log in'
@@ -28,7 +28,7 @@ end
 
 def student_sign_in(email='student@test.com', password='testtest')
   visit '/'
-  click_link 'Student sign in'
+  click_link 'Student Sign In'
   fill_in 'Email', with: email
   fill_in 'Password', with: password
   click_button 'Log in'
@@ -36,7 +36,7 @@ end
 
 def student_log_out_then_sign_in
   click_link 'Log out'
-  click_link 'Student sign in'
+  click_link 'Student Sign In'
   fill_in 'Email', with: 'student@test.com'
   fill_in 'Password', with: 'testtest'
   click_button 'Log in'
@@ -44,7 +44,7 @@ end
 
 def teacher_log_out_then_sign_in
   click_link 'Log out'
-  click_link 'Teacher sign in'
+  click_link 'Teacher Sign In'
   fill_in 'Email', with: 'teacher@test.com'
   fill_in 'Password', with: 'testtest'
   click_button 'Log in'
