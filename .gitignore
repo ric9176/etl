@@ -12,3 +12,5 @@
 !/log/.keep
 /tmp
 /coverage
+public/assets/**
+/public/system/*

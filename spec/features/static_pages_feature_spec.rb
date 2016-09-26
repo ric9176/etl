@@ -8,20 +8,11 @@ feature 'static_pages' do
       expect(page).to have_link 'Why Us'
       expect(page).to have_link 'Services'
       expect(page).to have_link 'Pricing'
-      expect(page).to have_link 'Book a Free Lesson'
-      expect(page).to have_link 'Contact'
-      expect(page).to have_link 'Blog'
-    end
-
-    scenario 'should allow students to link to other pages' do
-      visit '/'
-      click_link('Why Us')
-      expect(current_path).to eq('/why_us')
     end
 
     scenario 'should have sign in link' do
       visit '/'
-      expect(page).to have_link 'Student sign in'
+      expect(page).to have_link 'Student Sign In'
     end
   end
 end

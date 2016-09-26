@@ -27,7 +27,6 @@ class RelationshipsController < ApplicationController
     end
   end
 
-
   def destroy
     if @relationship.destroy
       redirect_to '/dashboard', notice: 'Request successfully destroyed'
